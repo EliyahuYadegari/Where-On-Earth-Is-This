@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import LoginPage from './pages/loginPage';
 import GamePage from './pages/gamePage';
 import { Routes, Route } from 'react-router-dom';
