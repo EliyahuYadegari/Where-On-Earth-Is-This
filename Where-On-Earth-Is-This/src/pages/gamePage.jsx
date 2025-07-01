@@ -7,13 +7,26 @@ function GamePage() {
     const [guessedLetters, setGuessedLetters] = useState(""); // רצף האותיות שנוחשו עד עכשיו
 
     const handleInputChange = (event) => {
-        // רק אותיות בעברית ובלי מספרים
-        // בלי אותיות סופיות- םףךןץ
         const inputValue = event.target.value;
-        if (inputValue.length <= 1) {
-            setCurrentGuess(inputValue); 
-        } else {
-            setCurrentGuess(inputValue.charAt(0));
+
+        // אם אין קלט, נאפס את הניחוש הנוכחי ונצא.
+        if (inputValue.length === 0) {
+            setCurrentGuess("");
+            return;
+        }
+
+        const char = inputValue.charAt(0);
+
+        // טווח ה-Unicode של אותיות עבריות הוא בין '\u05D0' ל-'\u05EA'.
+        const isHebrewLetter = (char >= '\u05D0' && char <= '\u05EA');
+
+        // שומר רשימה של האותיות הסופיות כי הן חלק מהאותיות ואז בודק אם הקלט הוא חלק מהאותיות האלה
+        const finalLetters = ['\u05DD', '\u05E3', '\u05DA', '\u05DF', '\u05E5']; // ם, ף, ך, ן, ץ
+        const isFinalLetter = finalLetters.includes(char);
+
+        // בודק אם התו הוא אות בעברית ולא אות סופית
+        if (isHebrewLetter && !isFinalLetter) {
+            setCurrentGuess(char);
         }
     };
 
@@ -28,7 +41,7 @@ function GamePage() {
             // - עדכון מצב המשחק בהתאם לאות (למשל, סינון רשימת הערים)
             // - הצגת רמזים או התקדמות
         } else {
-            alert('אנא הכנס אות אחת בלבד.'); // התראה למשתמש
+            alert('נא להכניס אות לא סופית בעברית בלבד'); // התראה למשתמש
         }
     };
 
@@ -46,6 +59,7 @@ function GamePage() {
             <h2>{guessedLetters}</h2>
 
             <h1>?מה האות הבאה</h1>
+            <h3> נא להכניס אות לא סופית בעברית בלבד*</h3>
 
             <input
                 type='text'
