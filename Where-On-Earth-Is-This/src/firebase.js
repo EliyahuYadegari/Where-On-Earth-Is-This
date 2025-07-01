@@ -1,24 +1,40 @@
-// src/firebase.js
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore"; // <-- הוספנו את השורה הזו
-// import { getDatabase } from "firebase/database"; // בטל את ההערה אם אתה משתמש ב-Realtime Database
+import { getAuth, GoogleAuthProvider, signInWithPopup, signInAnonymously, signOut, onAuthStateChanged } from "firebase/auth";
+import { getFirestore, doc, setDoc, serverTimestamp } from "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDMhbpBtajAAIP8DYCa6yyb1hsxgMvieWM",
-  authDomain: "where-on-earth-is-this-bf2fb.firebaseapp.com",
-  projectId: "where-on-earth-is-this-bf2fb",
-  storageBucket: "where-on-earth-is-this-bf2fb.firebasestorage.app",
-  messagingSenderId: "659898780718",
-  appId: "1:659898780718:web:d3ac56b7a7f02b11bd63bf",
-  measurementId: "G-4FPB791TKY"
+  apiKey: "AIzaSyAJoAO8mICfAz8Uckk4XLVS1ocTUMiqO8Y",
+  authDomain: "whereonearthisthis-3de6b.firebaseapp.com",
+  projectId: "whereonearthisthis-3de6b",
+  storageBucket: "whereonearthisthis-3de6b.firebasestorage.app",
+  messagingSenderId: "900375718437",
+  appId: "1:900375718437:web:6e9f8aa0bb4f7cdb72edcc",
+  measurementId: "G-NSDCN2HDCZ"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
-// Initialize Cloud Firestore and get a reference to the service
-export const db = getFirestore(app); // <-- הוספנו את השורה הזו כדי לייצא את מופע ה-Firestore
+// Initialize Firebase Authentication and get a reference to the service
+const auth = getAuth(app);
 
-// אם אתה משתמש ב-Realtime Database במקום Firestore, בטל את ההערה על השורה הבאה:
-// export const rtdb = getDatabase(app);
+// Initialize Cloud Firestore and get a reference to the service
+const db = getFirestore(app);
+
+// Google Auth Provider
+const googleProvider = new GoogleAuthProvider();
+
+export {
+  auth,
+  db,
+  googleProvider,
+  signInWithPopup,
+  signInAnonymously,
+  signOut,
+  onAuthStateChanged,
+  doc,
+  setDoc,
+  serverTimestamp
+};

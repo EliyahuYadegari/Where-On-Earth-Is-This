@@ -1,10 +1,50 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import allSettlementsData from "../../data/settlements.json";
+import {  auth, signOut, } from "../firebase"; 
 
 function GamePage() {
   const [settlements, setSettlements] = useState(allSettlementsData);
   const [currentGuess, setCurrentGuess] = useState(""); // האות הנוכחית שהוקלדה
   const [guessedLetters, setGuessedLetters] = useState(""); // רצף האותיות שנוחשו עד עכשיו
+
+  const [currentUserData, setCurrentUserData] = useState(null); // ישמור את האובייקט מה-sessionStorage
+
+  const navigate = useNavigate();
+
+  // --- useEffect לטעינת נתוני משתמש מ-sessionStorage בלבד ---
+  useEffect(() => {
+    const loadUserData = () => {
+      // פונקציה זו כבר לא צריכה להיות async
+      const storedUser = sessionStorage.getItem("currentUser"); // קוראים את הנתונים מ-sessionStorage
+
+      if (storedUser) {
+        const parsedUser = JSON.parse(storedUser); // מנתחים את המחרוזת בחזרה לאובייקט JavaScript
+        setCurrentUserData(parsedUser); // שומרים את הנתונים הכלליים
+      } else {
+        // אם אין מידע ב-sessionStorage, המשתמש לא מחובר או שה-session פג
+        console.log("No user data in session storage, navigating to login.");
+        navigate("/"); // נווט חזרה לדף ההתחברות
+      }
+    };
+
+    loadUserData(); // קוראים לפונקציה ברגע שהקומפוננטה נטענת
+  }, [navigate]); // navigate כתלות, כדי למנוע אזהרה ולפעול נכון
+
+
+  // --- פונקציית התנתקות  ---
+const handleSignOut = async () => {
+  try {
+    await signOut(auth); // מבצע התנתקות מ-Firebase באמצעות האובייקט 'auth'
+    sessionStorage.removeItem("currentUser"); // מנקה את הנתונים מ-sessionStorage
+    console.log("User signed out and session storage cleared.");
+    navigate("/"); // מנווט את המשתמש בחזרה לדף ההתחברות (הדף הראשי)
+  } catch (error) {
+    console.error("Error signing out:", error.message);
+    alert(`שגיאת התנתקות: ${error.message}`); // הצג הודעת שגיאה למשתמש במקרה של כשל
+  }
+};
+
 
   const handleInputChange = (event) => {
     const inputValue = event.target.value;
@@ -68,6 +108,16 @@ function GamePage() {
         width: "100%", // רוחב מלא בתוך ה-maxWidth
       }}
     >
+      {/* --- הצגת שם משתמש בלבד --- */}
+      <div style={{ marginBottom: "20px" }}>
+        <h2>
+          ברוך הבא{" "}
+          <strong style={{ color: "blue" }}>
+            {currentUserData?.displayName || "אורח"}{" "}
+          </strong>
+          
+        </h2>
+      </div>
       <h2> :עד עכשיו</h2>
       <h1>{guessedLetters}</h1>
       <h2>?מה האות הבאה</h2>
@@ -109,6 +159,26 @@ function GamePage() {
       >
         שלח
       </button>
+
+
+      <br /><br />
+         <button
+        onClick={handleSignOut} // זה מה שיפעיל את פונקציית ההתנתקות
+        style={{
+          backgroundColor: "#f44336", // צבע אדום לכפתור התנתקות
+          color: "white",
+          padding: "10px 20px",
+          borderRadius: "5px",
+          border: "none",
+          cursor: "pointer",
+          marginTop: "20px", // מרווח מהאלמנטים שמעליו
+          fontSize: "1em",
+          fontWeight: "bold", // קצת יותר בולט
+        }}
+      >
+        התנתק
+      </button>
+
     </div>
   );
 }
