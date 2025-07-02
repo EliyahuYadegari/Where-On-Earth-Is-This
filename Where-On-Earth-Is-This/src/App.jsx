@@ -15,7 +15,7 @@ function App() {
                 <Routes>
                     <Route path='/' element={<LoginPage />} />
                     {/* אין צורך להעביר את ה-Trie כ-prop כאן! GamePage יקבל אותו מ-useTrie */}
-                    <Route path="/game" element={<GamePage />} />
+                    <Route path="/:game" element={<GamePage />} />
                 </Routes>
             </TrieProvider>
         </>
