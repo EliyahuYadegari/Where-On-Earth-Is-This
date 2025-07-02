@@ -1,7 +1,8 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getAuth, GoogleAuthProvider, signInWithPopup, signInAnonymously, signOut, onAuthStateChanged } from "firebase/auth";
+import { getAuth, GoogleAuthProvider, signInWithPopup, signInAnonymously, signOut, onAuthStateChanged, setPersistence, browserSessionPersistence } from "firebase/auth";
 import { getFirestore, doc, setDoc, serverTimestamp } from "firebase/firestore";
+
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -17,8 +18,19 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
+
 // Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
+
+// המטרה כאן היא להגדיר שבריענון - לא יתנתק המשתמש אך אם יססגר הדפדפן הוא יתנתק
+setPersistence(auth, browserSessionPersistence)
+  .then(() => {
+    console.log("Firebase Auth persistence set to SESSION. User will be logged out on tab/window close.");
+  })
+  .catch((error) => {
+    // טיפול בשגיאות אם ההגדרה נכשלה
+    console.error("Error setting persistence:", error.code, error.message);
+  });
 
 // Initialize Cloud Firestore and get a reference to the service
 const db = getFirestore(app);
