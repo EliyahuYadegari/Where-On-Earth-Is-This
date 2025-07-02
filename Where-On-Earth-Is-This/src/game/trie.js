@@ -1,35 +1,45 @@
 // src/game/trie.js
 
+/**
+ * בונה עץ Trie ממערך של אובייקטי יישובים.
+ * שמות היישובים מנוקים מרווחים לפני ההוספה לעץ.
+ *
+ * @param {Array<Object>} settlementsArray - מערך של אובייקטי יישובים, כאשר לכל אובייקט יש מאפיין 'name'.
+ * @returns {Object} - אובייקט Trie (מפת JavaScript) המייצג את מבנה העץ.
+ */
 export const buildTrie = (settlementsArray) => {
-    const trie = {}; // זהו צומת השורש הריק - ההתחלה של העץ
+    const trie = {}; // צומת השורש הריק של העץ
 
+    // עוברים על כל יישוב במערך
     settlementsArray.forEach(settlementObj => {
+        // מנקים את שם היישוב מכל הרווחים (רווח, טאב, וכו')
         const cleanSettlementName = settlementObj.name.replace(/\s+/g, '');
 
+        // מוודאים שהשם אחרי הניקוי אינו ריק
         if (cleanSettlementName.length === 0) {
-            return;
+            return; // אם ריק, מדלגים על יישוב זה
         }
 
-        let currentNode = trie; // מתחילים תמיד מהשורש (emptyNode בדוגמה שלך)
+        let currentNode = trie; // מתחילים תמיד מצומת השורש של ה-Trie עבור כל מילה חדשה
 
+        // עוברים על כל אות בשם היישוב הנקי
         for (let i = 0; i < cleanSettlementName.length; i++) {
             const char = cleanSettlementName[i];
 
-            // אם אין "ילד" (צומת) עבור האות הנוכחית ב-currentNode, ניצור אותו.
-            // זה יוצר אובייקטים כמו node_aleph שראית בהסבר
+            // אם הצומת עבור האות הנוכחית עדיין לא קיים כ"ילד" של הצומת הנוכחי
             if (!currentNode[char]) {
+                // יוצרים צומת חדש (אובייקט JavaScript ריק) עבור האות
                 currentNode[char] = {};
             }
-            // עוברים לצומת של האות הנוכחית
+            // עוברים לצומת של האות הנוכחית כדי להמשיך ממנו
             currentNode = currentNode[char];
         }
 
-        // כשהלולאה מסתיימת, currentNode הוא הצומת הסופי של המילה.
-        // כאן אנחנו מסמנים אותו כסוף מילה, כמו node_yod_of_bari שראית בהסבר.
+        // לאחר שעברנו על כל האותיות בשם היישוב,
+        // הצומת הנוכחי (currentNode) הוא הצומת האחרון של המילה בעץ.
+        // מסמנים את הצומת הזה כנקודת סיום של מילה חוקית.
         currentNode.isEndOfWord = true;
     });
 
-    return trie;
+    return trie; // מחזירים את אובייקט ה-Trie המלא והבנוי
 };
-
-// ... כאן יבואו פונקציות עזר נוספות כמו isValidPrefix, getPossibleNextLetters, isWord ...
