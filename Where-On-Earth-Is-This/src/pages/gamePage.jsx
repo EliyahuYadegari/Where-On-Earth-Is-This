@@ -68,7 +68,7 @@ function GamePage() {
         if (isHebrewLetter && !isFinalLetter) {
             setCurrentGuess(char);
             // אם האות תקינה, נקה הודעת שגיאה קודמת
-            setDisplayMessage("הזן אות ראשונה..."); // או הודעה אחרת מתאימה
+            setDisplayMessage("הזן אות ראשונה...");
         } else if (!isHebrewLetter) {
             setDisplayMessage('נא להזין אות בעברית');
         } else if (isFinalLetter) {
@@ -82,17 +82,12 @@ function GamePage() {
             setGuessedLetters(newGuessedLetters);
             console.log('האות שנשלחה:', currentGuess);
 
-            // ******* זהו החלק שצריך לשנות / למחוק ********
-            // מכיוון שאין autocomplete, הסרנו את כל בלוק ה-if/else הזה.
-            // במקום זאת, פשוט הצג הודעה כללית או השאר את הודעת ה-displayMessage
-            // כפי שהיא או עדכן אותה.
+            // ודק אם ה-trie קיים ומעדכן את הודעת התצוגה עם האותיות שניחשו עד כה, או מציג הודעה שה-Trie אינו זמין
             if (trie) {
-                 // אם אתה רוצה רק לוודא שה-Trie קיים, ללא בדיקת autocomplete:
                 setDisplayMessage(`האותיות עד כה: ${newGuessedLetters}`);
             } else {
                 setDisplayMessage("ה-Trie אינו זמין עדיין.");
             }
-            // **********************************************
 
             setCurrentGuess(''); // מאפסים את שדה הקלט
             console.log('currentGuess after reset:', currentGuess);
