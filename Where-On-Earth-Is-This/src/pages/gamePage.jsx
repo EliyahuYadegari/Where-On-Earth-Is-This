@@ -2,24 +2,19 @@
 
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import allSettlementsData from '../../data/settlements.json'; // לא נשתמש בזה ישירות אם משתמשים ב-Trie לגישה ליישובים
-import { useTrie } from '../contexts/TrieProvider'; // ודא נתיב נכון ל-contexts/TrieProvider.jsx
-import { auth, signOut } from '../firebase'; // ודא נתיב נכון ל-firebase
+import { useTrie } from '../contexts/TrieProvider';
+import { auth, signOut } from '../firebase';
 
 function GamePage() {
-    // מצבים שקשורים ללוגיקת המשחק והקלט
-    const [currentGuess, setCurrentGuess] = useState(''); // האות הנוכחית שהוקלדה
-    const [guessedLetters, setGuessedLetters] = useState(""); // רצף האותיות שנוחשו עד עכשיו
+    const [currentGuess, setCurrentGuess] = useState('');
+    const [guessedLetters, setGuessedLetters] = useState("");
     const [displayMessage, setDisplayMessage] = useState("הזן אות ראשונה...");
 
-    // מצבים שקשורים לניהול משתמש
     const [currentUserData, setCurrentUserData] = useState(null);
     const navigate = useNavigate();
 
-    // קבלת ה-Trie מהקונטקסט
     const trie = useTrie();
 
-    // --- useEffect לטעינת נתוני משתמש מ-sessionStorage ---
     useEffect(() => {
         const loadUserData = () => {
             const storedUser = sessionStorage.getItem("currentUser");
@@ -28,25 +23,22 @@ function GamePage() {
                 setCurrentUserData(parsedUser);
             } else {
                 console.log("No user data in session storage, navigating to login.");
-                navigate("/"); // נווט חזרה לדף ההתחברות
+                navigate("/");
             }
         };
         loadUserData();
     }, [navigate]);
 
-    // --- useEffect לבדיקה שה-Trie אכן זמין דרך ה-Hook ---
     useEffect(() => {
         if (trie) {
             console.log("GamePage.jsx: ה-Trie זמין ב-GamePage דרך useTrie:", trie);
-            // כאן תוכל להוסיף לוגיקה שתלויה ב-Trie, לדוגמה:
-            // setDisplayMessage("המשחק מוכן!");
+            // setDisplayMessage("המשחק מוכן!"); // ניתן להפעיל כאן הודעה ראשונית אם תרצה
         } else {
             console.log("GamePage.jsx: ממתין ל-Trie דרך useTrie...");
             setDisplayMessage("טוען נתוני משחק...");
         }
-    }, [trie]); // יופעל כשה-trie משתנה (כלומר, כשהוא מוכן)
+    }, [trie]);
 
-    // --- פונקציית התנתקות ---
     const handleSignOut = async () => {
         try {
             await signOut(auth);
@@ -70,16 +62,16 @@ function GamePage() {
         const char = inputValue.charAt(0);
 
         const isHebrewLetter = (char >= '\u05D0' && char <= '\u05EA');
-        const finalLetters = ['\u05DD', '\u05E3', '\u05DA', '\u05DF', '\u05E5']; // ם, ף, ך, ן, ץ
+        const finalLetters = ['\u05DD', '\u05E3', '\u05DA', '\u05DF', '\u05E5'];
         const isFinalLetter = finalLetters.includes(char);
 
         if (isHebrewLetter && !isFinalLetter) {
             setCurrentGuess(char);
+            // אם האות תקינה, נקה הודעת שגיאה קודמת
+            setDisplayMessage("הזן אות ראשונה..."); // או הודעה אחרת מתאימה
         } else if (!isHebrewLetter) {
-            // הוספת הודעה למשתמש אם הקלט אינו אות עברית
             setDisplayMessage('נא להזין אות בעברית');
         } else if (isFinalLetter) {
-            // הוספת הודעה למשתמש אם הקלט הוא אות סופית
             setDisplayMessage('נא להזין אות שאינה סופית');
         }
     };
@@ -90,21 +82,20 @@ function GamePage() {
             setGuessedLetters(newGuessedLetters);
             console.log('האות שנשלחה:', currentGuess);
 
-            // כאן תוכל להוסיף לוגיקת משחק עם ה-Trie:
-            // לדוגמה, לבדוק אם יש יישובים שמתחילים ב-newGuessedLetters
+            // ******* זהו החלק שצריך לשנות / למחוק ********
+            // מכיוון שאין autocomplete, הסרנו את כל בלוק ה-if/else הזה.
+            // במקום זאת, פשוט הצג הודעה כללית או השאר את הודעת ה-displayMessage
+            // כפי שהיא או עדכן אותה.
             if (trie) {
-                const completions = trie.autocomplete(newGuessedLetters);
-                if (completions.length > 0) {
-                    setDisplayMessage(`יש ${completions.length} יישובים שמתחילים ב-${newGuessedLetters}!`);
-                    // אתה יכול גם להציג רמזים מתוך completions
-                } else {
-                    setDisplayMessage(`אין יישובים שמתחילים ב-${newGuessedLetters}. נסה אות אחרת.`);
-                }
+                 // אם אתה רוצה רק לוודא שה-Trie קיים, ללא בדיקת autocomplete:
+                setDisplayMessage(`האותיות עד כה: ${newGuessedLetters}`);
             } else {
                 setDisplayMessage("ה-Trie אינו זמין עדיין.");
             }
+            // **********************************************
 
             setCurrentGuess(''); // מאפסים את שדה הקלט
+            console.log('currentGuess after reset:', currentGuess);
         } else {
             setDisplayMessage('נא להכניס אות אחת בלבד');
         }
@@ -126,9 +117,8 @@ function GamePage() {
             textAlign: "center",
             maxWidth: "400px",
             width: "100%",
-            margin: "20px auto" // כדי למרכז את הדיב בדף
+            margin: "20px auto"
         }}>
-            {/* הצגת שם משתמש */}
             <div style={{ marginBottom: "20px" }}>
                 <h2>
                     ברוך הבא{" "}
@@ -152,7 +142,7 @@ function GamePage() {
                 maxLength="1"
                 placeholder='הכנס אות אחת'
                 style={{ fontSize: '34px', width: '240px', height: '80px', textAlign: 'center', margin: '10px 0' }}
-                dir="rtl" // כיוון כתיבה מימין לשמאל
+                dir="rtl"
             />
 
             <br /><br />
