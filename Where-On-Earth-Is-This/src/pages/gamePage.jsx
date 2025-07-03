@@ -1,6 +1,6 @@
 // src/pages/gamePage.jsx
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTrie } from '../contexts/TrieProvider';
 import { auth, signOut } from '../firebase';
@@ -14,6 +14,35 @@ function GamePage() {
     const navigate = useNavigate();
 
     const trie = useTrie();
+
+
+    // פעולות שאפשר לעשות עם הtrie
+
+    // המצביע לשורש של העץ
+    // let currentNode = trie.root;
+    // console.log(currentNode);
+    // const char = 'ב'; // נניח שאנחנו מחפשים את האות ב'
+    // // מעבר לבן
+    // if (currentNode.children[char]) { // ודא שהבן קיים
+    //     currentNode = currentNode.children[char]; // עברנו לצומת של 'ב'
+    // } else {
+    //     // האות 'ב' אינה המשך חוקי מהצומת הנוכחי
+    //     // לדוגמה, אין מילים שמתחילות בקידומת הנוכחית עם האות 'ב' אחריה
+    //     console.log(`אין ילד לאות '${char}'`);
+    //     // כאן תוכל לטפל במצב שבו אין המשך חוקי
+    // }
+    // // זיהוי של עלה
+    // if (Object.keys(currentNode.children).length === 0) {
+    //     console.log("הצומת הנוכחי הוא עלה (אין לו ילדים).");
+    //     // זה אומר שהקידומת שהגענו אליה היא מקסימלית מבחינת המשך ב-Trie.
+    //     // אם גם isEndOfWord הוא true, אז זו מילה סופית בלקסיקון.
+    // }
+    // //  לזהות שצומת מסוים הוא סוף מילה
+    // if (currentNode.isEndOfWord) {
+    //     console.log("הקידומת שמסתיימת בצומת זה היא מילה חוקית בפני עצמה.");
+    // }
+
+
 
     useEffect(() => {
         const loadUserData = () => {
