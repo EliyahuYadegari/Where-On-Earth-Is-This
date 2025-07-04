@@ -22,7 +22,7 @@ const app = initializeApp(firebaseConfig);
 // Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
 
-// המטרה כאן היא להגדיר שבריענון - לא יתנתק המשתמש אך אם יססגר הדפדפן הוא יתנתק
+// המטרה כאן היא להגדיר שבריענון - לא יתנתק המשתמש אך אם יסגר הדפדפן הוא יתנתק
 setPersistence(auth, browserSessionPersistence)
   .then(() => {
     console.log("Firebase Auth persistence set to SESSION. User will be logged out on tab/window close.");

@@ -1,6 +1,7 @@
+/* eslint-disable react/prop-types */
 // src/contexts/TrieProvider.jsx
 
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import { createContext, useContext, useState, useEffect } from 'react';
 import { buildTrie } from '../game/trie'; // ייבוא פונקציית בניית ה-Trie
 import allSettlementsData from '../../data/settlements.json'; // ייבוא נתוני היישובים
 
