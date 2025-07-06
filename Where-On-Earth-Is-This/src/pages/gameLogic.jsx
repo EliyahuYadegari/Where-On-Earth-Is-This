@@ -1,15 +1,19 @@
 // src/pages/gamePage.jsx
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef  } from "react";
 import { useTrie } from "../contexts/TrieProvider";
+import { isCorrectWord } from '../game/trie';
 
 function GameLogic() {
-  const [currentGuess, setCurrentGuess] = useState("");
   const [guessedLetters, setGuessedLetters] = useState("");
   const [displayMessage, setDisplayMessage] = useState("...הזן אות ראשונה");
   const [displayAlertMessage, setDisplayAlertMessage] = useState("");
+  const [currentGuess, setCurrentGuess] = useState("");   // כנראה זה יהיה מיותר
+
+  const [currentTrieNode, setCurrentTrieNode] = useState(null); // נתחיל עם null ונאתחל ב-useEffect
 
   const trie = useTrie();
+  const inputRef = useRef(null); // זהו ה-ref שיתייחס לתיבת הקלט
 
   // פעולות שאפשר לעשות עם הtrie
 
@@ -41,6 +45,8 @@ function GameLogic() {
     if (trie) {
       console.log("GamePage.jsx: ה-Trie זמין ב-GamePage דרך useTrie:", trie);
       // setDisplayMessage("המשחק מוכן!"); // ניתן להפעיל כאן הודעה ראשונית אם תרצה
+      setCurrentTrieNode(trie); // מאתחל את הצומת הנוכחי לשורש ה-Trie
+
     } else {
       console.log("GamePage.jsx: ממתין ל-Trie דרך useTrie...");
       setDisplayMessage("טוען נתוני משחק...");
@@ -72,26 +78,70 @@ function GameLogic() {
     }
   };
 
+
+
   const handleSubmitLetter = () => {
-    if (currentGuess.length === 1) {
-      const newGuessedLetters = guessedLetters + currentGuess;
-      setGuessedLetters(newGuessedLetters);
-      console.log("האות שנשלחה:", currentGuess);
+    // ודא שיש תו בקלט הנוכחי וש-trie ו-currentTrieNode זמינים
+    if (currentGuess.length === 1 && trie && currentTrieNode) {
+      const char = currentGuess; // האות שהמשתמש שלח
 
-      // ודק אם ה-trie קיים ומעדכן את הודעת התצוגה עם האותיות שניחשו עד כה, או מציג הודעה שה-Trie אינו זמין
-      if (trie) {
-        setDisplayMessage("...הזן את האות הבאה");
+      // ########################################################
+      // לוגיקת בדיקת ה-Trie החדשה מתחילה כאן
+      const isValidCharacterInTrie = isCorrectWord(trie, currentTrieNode, char);
+
+      if (isValidCharacterInTrie) {
+        // אם האות תקינה:
+        const newGuessedLetters = guessedLetters + char; // הוסף אות לרשימת האותיות שניחשו
+        setGuessedLetters(newGuessedLetters); // עדכן מצב
+        console.log("האות שנשלחה:", char);
+
+        // **עדכן את הצומת הנוכחי** ב-Trie
+        // אם האות קיימת כבן של הצומת הנוכחי, עבור אליו.
+        // (הפונקציה isCorrectWord כבר בדקה ש-charExistsInCurrentNode הוא true או isEndOfWord true)
+        // אם הצומת הוא סוף מילה, עדיין נרצה להתקדם לילד שלו אם יש כזה.
+        // לכן נבדוק רק אם יש בן כזה.
+        if (currentTrieNode[char]) {
+            setCurrentTrieNode(currentTrieNode[char]);
+        } else {
+            // אם isCorrectWord החזיר true בגלל isEndOfWord בלבד, ולא בגלל המשך
+            // זה אומר שהמילה הושלמה.
+            // במצב כזה, נרצה לאפס את currentTrieNode לשורש או לטפל בסיום מילה.
+            // לטובת ההדגמה, נשאיר את זה כאיפוס לשורש עבור התחלה חדשה לאחר מילה שלמה.
+            // לוגיקה זו תלויה במשחק שלך.
+            setCurrentTrieNode(trie); // אפס לשורש להתחלה חדשה
+        }
+
+        setDisplayMessage("...הזן את האות הבאה"); // עדכן הודעת תצוגה
+        setDisplayAlertMessage(""); // נקה התראות
+
       } else {
-        setDisplayMessage("ה-Trie אינו זמין עדיין.");
-      }
+        // אם האות לא תקינה לפי ה-Trie:
+        setDisplayAlertMessage("יא לוזרררר זה לא תקין. התחל מחדש");
+        setCurrentTrieNode(trie); // אפס לשורש להתחלה חדשה
+        setGuessedLetters(""); // עדכן מצב
+        setCurrentGuess('')
 
-      setCurrentGuess(""); // מאפסים את שדה הקלט
+
+        // אל תעדכן את guessedLetters
+        // אל תעדכן את currentTrieNode
+      }
+      // ########################################################
+
+      setCurrentGuess(""); // מאפסים את שדה הקלט בין אם תקין ובין אם לא
       console.log("currentGuess after reset:", currentGuess);
+    
     } else {
-      setDisplayAlertMessage("נא להכניס אות אחת בלבד");
+        // מצב שבו currentGuess.length > 1 (לא אמור לקרות בגלל maxLength)
+        // או ש-trie/currentTrieNode אינם זמינים
+        setDisplayAlertMessage("שגיאה: נתוני המשחק אינם מוכנים או קלט שגוי");
+        setCurrentGuess(""); // נקה למקרה כזה
     }
+    if (inputRef.current) { // ודא שה-ref קיים ומצביע לרכיב DOM
+        inputRef.current.focus(); // החזר את הפוקוס לתיבת הקלט
+      }
   };
 
+  
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
       handleSubmitLetter();
@@ -124,6 +174,7 @@ function GameLogic() {
         onKeyDown={handleKeyDown}
         maxLength="1"
         placeholder="הכנס אות אחת"
+        ref={inputRef}
         style={{
           fontSize: "34px",
           width: "240px",
@@ -155,6 +206,8 @@ function GameLogic() {
       >
         שלח
       </button>
+
+
     </div>
   );
 }

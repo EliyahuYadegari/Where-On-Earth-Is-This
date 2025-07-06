@@ -43,3 +43,22 @@ export const buildTrie = (settlementsArray) => {
 
     return trie; // מחזירים את אובייקט ה-Trie המלא והבנוי
 };
+
+
+/**
+ * בודק אם תו מסוים קיים כבן של הצומת הנוכחי ב-Trie,
+ * או אם הצומת הנוכחי הוא סוף מילה, וגם אם אותו תו קיים כבן של שורש ה-Trie.
+ *
+ * @param {Object} rootTrie - צומת השורש של עץ ה-Trie.
+ * @param {Object} currentNode - הצומת הנוכחי בעץ ה-Trie.
+ * @param {string} char - התו לבדיקה.
+ * @returns {boolean} - True אם התנאים מתקיימים, אחרת False.
+ */
+export const isCorrectWord  = (rootTrie, currentNode, char) => {
+  const charExistsInCurrentNode = !!currentNode[char];
+  const isEndOfWord = !!currentNode.isEndOfWord;
+  const charExistsInRoot = !!rootTrie[char];
+
+  return (charExistsInCurrentNode || isEndOfWord) && charExistsInRoot;
+
+};
