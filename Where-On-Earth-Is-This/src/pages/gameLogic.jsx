@@ -1,14 +1,14 @@
 // src/pages/gamePage.jsx
 
-import { useState, useEffect, useRef  } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useTrie } from "../contexts/TrieProvider";
-import { isCorrectWord } from '../game/trie';
+import { isCorrectWord } from "../game/trie";
 
 function GameLogic() {
   const [guessedLetters, setGuessedLetters] = useState("");
   const [displayMessage, setDisplayMessage] = useState("...הזן אות ראשונה");
   const [displayAlertMessage, setDisplayAlertMessage] = useState("");
-  const [currentGuess, setCurrentGuess] = useState("");   // כנראה זה יהיה מיותר
+  const [currentGuess, setCurrentGuess] = useState(""); // כנראה זה יהיה מיותר
 
   const [currentTrieNode, setCurrentTrieNode] = useState(null); // נתחיל עם null ונאתחל ב-useEffect
 
@@ -46,7 +46,6 @@ function GameLogic() {
       console.log("GamePage.jsx: ה-Trie זמין ב-GamePage דרך useTrie:", trie);
       // setDisplayMessage("המשחק מוכן!"); // ניתן להפעיל כאן הודעה ראשונית אם תרצה
       setCurrentTrieNode(trie); // מאתחל את הצומת הנוכחי לשורש ה-Trie
-
     } else {
       console.log("GamePage.jsx: ממתין ל-Trie דרך useTrie...");
       setDisplayMessage("טוען נתוני משחק...");
@@ -78,70 +77,75 @@ function GameLogic() {
     }
   };
 
-
-
   const handleSubmitLetter = () => {
     // ודא שיש תו בקלט הנוכחי וש-trie ו-currentTrieNode זמינים
-    if (currentGuess.length === 1 && trie && currentTrieNode) {
-      const char = currentGuess; // האות שהמשתמש שלח
+    if (currentGuess.length === 1) {
+      if (currentGuess.length === 1 && trie && currentTrieNode) {
+        const char = currentGuess; // האות שהמשתמש שלח
 
-      // ########################################################
-      // לוגיקת בדיקת ה-Trie החדשה מתחילה כאן
-      const isValidCharacterInTrie = isCorrectWord(trie, currentTrieNode, char);
+        // ########################################################
+        // לוגיקת בדיקת ה-Trie החדשה מתחילה כאן
+        const isValidCharacterInTrie = isCorrectWord(
+          trie,
+          currentTrieNode,
+          char
+        );
 
-      if (isValidCharacterInTrie) {
-        // אם האות תקינה:
-        const newGuessedLetters = guessedLetters + char; // הוסף אות לרשימת האותיות שניחשו
-        setGuessedLetters(newGuessedLetters); // עדכן מצב
-        console.log("האות שנשלחה:", char);
+        if (isValidCharacterInTrie) {
+          // אם האות תקינה:
+          const newGuessedLetters = guessedLetters + char; // הוסף אות לרשימת האותיות שניחשו
+          setGuessedLetters(newGuessedLetters); // עדכן מצב
+          console.log("האות שנשלחה:", char);
 
-        // **עדכן את הצומת הנוכחי** ב-Trie
-        // אם האות קיימת כבן של הצומת הנוכחי, עבור אליו.
-        // (הפונקציה isCorrectWord כבר בדקה ש-charExistsInCurrentNode הוא true או isEndOfWord true)
-        // אם הצומת הוא סוף מילה, עדיין נרצה להתקדם לילד שלו אם יש כזה.
-        // לכן נבדוק רק אם יש בן כזה.
-        if (currentTrieNode[char]) {
+          // **עדכן את הצומת הנוכחי** ב-Trie
+          // אם האות קיימת כבן של הצומת הנוכחי, עבור אליו.
+          // (הפונקציה isCorrectWord כבר בדקה ש-charExistsInCurrentNode הוא true או isEndOfWord true)
+          // אם הצומת הוא סוף מילה, עדיין נרצה להתקדם לילד שלו אם יש כזה.
+          // לכן נבדוק רק אם יש בן כזה.
+          if (currentTrieNode[char]) {
             setCurrentTrieNode(currentTrieNode[char]);
-        } else {
+          } else {
             // אם isCorrectWord החזיר true בגלל isEndOfWord בלבד, ולא בגלל המשך
             // זה אומר שהמילה הושלמה.
             // במצב כזה, נרצה לאפס את currentTrieNode לשורש או לטפל בסיום מילה.
             // לטובת ההדגמה, נשאיר את זה כאיפוס לשורש עבור התחלה חדשה לאחר מילה שלמה.
             // לוגיקה זו תלויה במשחק שלך.
             setCurrentTrieNode(trie); // אפס לשורש להתחלה חדשה
+          }
+
+          setDisplayMessage("...הזן את האות הבאה"); // עדכן הודעת תצוגה
+          setDisplayAlertMessage(""); // נקה התראות
+        } else {
+          // אם האות לא תקינה לפי ה-Trie:
+          setDisplayAlertMessage("יא לוזרררר זה לא תקין. התחל מחדש");
+          setCurrentTrieNode(trie); // אפס לשורש להתחלה חדשה
+          setGuessedLetters(""); // עדכן מצב
+          setCurrentGuess("");
+
+          // אל תעדכן את guessedLetters
+          // אל תעדכן את currentTrieNode
         }
+        // ########################################################
 
-        setDisplayMessage("...הזן את האות הבאה"); // עדכן הודעת תצוגה
-        setDisplayAlertMessage(""); // נקה התראות
-
+        setCurrentGuess(""); // מאפסים את שדה הקלט בין אם תקין ובין אם לא
+        console.log("currentGuess after reset:", currentGuess);
       } else {
-        // אם האות לא תקינה לפי ה-Trie:
-        setDisplayAlertMessage("יא לוזרררר זה לא תקין. התחל מחדש");
-        setCurrentTrieNode(trie); // אפס לשורש להתחלה חדשה
-        setGuessedLetters(""); // עדכן מצב
-        setCurrentGuess('')
-
-
-        // אל תעדכן את guessedLetters
-        // אל תעדכן את currentTrieNode
-      }
-      // ########################################################
-
-      setCurrentGuess(""); // מאפסים את שדה הקלט בין אם תקין ובין אם לא
-      console.log("currentGuess after reset:", currentGuess);
-    
-    } else {
         // מצב שבו currentGuess.length > 1 (לא אמור לקרות בגלל maxLength)
         // או ש-trie/currentTrieNode אינם זמינים
         setDisplayAlertMessage("שגיאה: נתוני המשחק אינם מוכנים או קלט שגוי");
         setCurrentGuess(""); // נקה למקרה כזה
-    }
-    if (inputRef.current) { // ודא שה-ref קיים ומצביע לרכיב DOM
+      }
+      if (inputRef.current) {
+        // ודא שה-ref קיים ומצביע לרכיב DOM
         inputRef.current.focus(); // החזר את הפוקוס לתיבת הקלט
       }
+    } else {
+      // מצב שבו currentGuess.length > 1 (לא אמור לקרות בגלל maxLength)
+      // או ש-trie/currentTrieNode אינם זמינים
+      setDisplayAlertMessage("הכנס אות אחת");
+    }
   };
 
-  
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
       handleSubmitLetter();
@@ -162,7 +166,9 @@ function GameLogic() {
         margin: "10px auto",
       }}
     >
-      {guessedLetters.length > 0 && <h2 style={{ color: "blue", }}>האותיות עד כה: {guessedLetters}</h2>}
+      {guessedLetters.length > 0 && (
+        <h2 style={{ color: "blue" }}>האותיות עד כה: {guessedLetters}</h2>
+      )}
 
       <h2>{displayMessage}</h2>
 
@@ -184,7 +190,7 @@ function GameLogic() {
         }}
         dir="rtl"
       />
-      <h3 style={{ color: "red", }} > {displayAlertMessage} </h3>
+      <h3 style={{ color: "red" }}> {displayAlertMessage} </h3>
 
       <button
         onClick={handleSubmitLetter}
@@ -206,8 +212,6 @@ function GameLogic() {
       >
         שלח
       </button>
-
-
     </div>
   );
 }
