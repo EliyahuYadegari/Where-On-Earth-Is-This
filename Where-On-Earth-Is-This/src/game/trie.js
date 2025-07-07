@@ -54,11 +54,8 @@ export const buildTrie = (settlementsArray) => {
  * @param {string} char - התו לבדיקה.
  * @returns {boolean} - True אם התנאים מתקיימים, אחרת False.
  */
-export const isCorrectWord  = (rootTrie, currentNode, char) => {
-  const charExistsInCurrentNode = !!currentNode[char];
-  const isEndOfWord = !!currentNode.isEndOfWord;
-  const charExistsInRoot = !!rootTrie[char];
 
-  return (charExistsInCurrentNode || isEndOfWord) && charExistsInRoot;
 
+export const isCorrectChar = ( currentNode, char) => {
+  return !!currentNode[char]; // רק בודק אם התו קיים כבן של הצומת הנוכחי
 };
