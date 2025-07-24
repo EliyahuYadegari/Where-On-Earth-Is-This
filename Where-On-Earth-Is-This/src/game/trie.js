@@ -38,7 +38,7 @@ export const buildTrie = (settlementsArray) => {
         // לאחר שעברנו על כל האותיות בשם היישוב,
         // הצומת הנוכחי (currentNode) הוא הצומת האחרון של המילה בעץ.
         // מסמנים את הצומת הזה כנקודת סיום של מילה חוקית.
-        currentNode.isEndOfWord = true;
+        currentNode.isEndOfWord = true; //
     });
 
     return trie; // מחזירים את אובייקט ה-Trie המלא והבנוי
@@ -46,16 +46,76 @@ export const buildTrie = (settlementsArray) => {
 
 
 /**
- * בודק אם תו מסוים קיים כבן של הצומת הנוכחי ב-Trie,
- * או אם הצומת הנוכחי הוא סוף מילה, וגם אם אותו תו קיים כבן של שורש ה-Trie.
+ * בודק אם תו מסוים קיים כבן של הצומת הנוכחי ב-Trie.
  *
- * @param {Object} rootTrie - צומת השורש של עץ ה-Trie.
  * @param {Object} currentNode - הצומת הנוכחי בעץ ה-Trie.
  * @param {string} char - התו לבדיקה.
- * @returns {boolean} - True אם התנאים מתקיימים, אחרת False.
+ * @returns {boolean} - True אם התו קיים כבן של הצומת הנוכחי, אחרת False.
  */
+export const isCorrectChar = (currentNode, char) => {
+    return !!currentNode[char]; // רק בודק אם התו קיים כבן של הצומת הנוכחי
+};
 
+/**
+ * מחזירה את הצומת ב-Trie המתאים לקידומת נתונה.
+ *
+ * @param {Object} rootTrie - שורש ה-Trie.
+ * @param {string} prefix - הקידומת לחיפוש.
+ * @returns {Object|null} הצומת המתאים לקידומת, או null אם הקידומת לא קיימת.
+ */
+export const getNodeForPrefix = (rootTrie, prefix) => {
+    let node = rootTrie;
+    for (let char of prefix) {
+        if (!node[char]) { // גישה ישירה לילד
+            return null;
+        }
+        node = node[char]; // התקדמות לצומת הילד
+    }
+    return node;
+};
 
-export const isCorrectChar = ( currentNode, char) => {
-  return !!currentNode[char]; // רק בודק אם התו קיים כבן של הצומת הנוכחי
+/**
+ * מחזירה מילה אקראית שלמה שניתן ליצור מהצומת הנתון.
+ *
+ * @param {Object} startNode - הצומת ממנו מתחילים לחפש מילה.
+ * @param {string} currentPath - הקידומת שכבר נבנתה עד startNode.
+ * @returns {string|null} מילה אקראית שלמה, או null אם לא נמצאה מילה.
+ */
+export const getRandomWordFromNode = (startNode, currentPath = '') => {
+    if (!startNode) {
+        return null;
+    }
+
+    // פונקציית עזר רקורסיבית למציאת נתיב אקראי
+    const findRandomPath = (node, path) => {
+        // אם הצומת הנוכחי הוא סוף מילה, זו אפשרות למילה.
+        if (node.isEndOfWord) { //
+            return path;
+        }
+
+        // קבל את כל המפתחות (האותיות) שהם ילדים חוקיים
+        // מסננים את המאפיין 'isEndOfWord' שיושב ישירות על הצומת
+        const childrenChars = Object.keys(node).filter(key => key !== 'isEndOfWord'); //
+
+        if (childrenChars.length === 0) {
+            return null; // אין לאן להמשיך מהצומת הזה
+        }
+
+        // בחר ילד אקראי כדי להמשיך את הנתיב
+        const randomIndex = Math.floor(Math.random() * childrenChars.length);
+        const nextChar = childrenChars[randomIndex];
+        const nextNode = node[nextChar]; // גישה ישירה לילד
+
+        // קריאה רקורסיבית
+        return findRandomPath(nextNode, path + nextChar);
+    };
+
+    let foundWord = null;
+    // ננסה מספר פעמים למצוא מילה כדי להתמודד עם מזל רע בבחירה אקראית
+    // (לדוגמה, נתיב אקראי שנבחר עשוי לא להוביל למילה שלמה).
+    for (let i = 0; i < 10; i++) { // נסה עד 10 פעמים
+        foundWord = findRandomPath(startNode, currentPath);
+        if (foundWord) break;
+    }
+    return foundWord;
 };
