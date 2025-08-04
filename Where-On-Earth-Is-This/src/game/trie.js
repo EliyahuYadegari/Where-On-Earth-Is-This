@@ -81,6 +81,7 @@ export const getNodeForPrefix = (rootTrie, prefix) => {
  * @param {string} currentPath - הקידומת שכבר נבנתה עד startNode.
  * @returns {string|null} מילה אקראית שלמה, או null אם לא נמצאה מילה.
  */
+
 export const getRandomWordFromNode = (startNode, currentPath = '') => {
     if (!startNode) {
         return null;
