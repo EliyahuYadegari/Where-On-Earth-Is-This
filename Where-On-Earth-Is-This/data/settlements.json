@@ -1989,7 +1989,6 @@
     "name": "הזורע",
     "council": "מגידו"
   },
-
   {
     "score": 3,
     "name": "חפציבה",
@@ -3180,23 +3179,15 @@
     "name": "מצר",
     "council": "מנשה"
   },
-
-
-
   {
-    "score": 2029,
+    "score": 4,
     "name": "מדרך עוז",
     "council": "מגידו"
   },
   {
-    "score": 1140,
+    "score": 3,
     "name": "מדרשת בן גוריון",
     "council": "רמת נגב"
-  },
-  {
-    "score": 897,
-    "name": "מדרשת רופין",
-    "council": "עמק חפר"
   },
   {
     "score": 1,
@@ -3204,7 +3195,7 @@
     "council": ""
   },
   {
-    "score": 2,
+    "score": 1,
     "name": "מגדל העמק",
     "council": ""
   },
@@ -3214,2587 +3205,2347 @@
     "council": "גוש עציון"
   },
   {
-    "score": 3751,
+    "score": 3,
     "name": "מגדלים",
     "council": "שומרון"
   },
   {
-    "score": 1202,
+    "score": 4,
     "name": "מכמנים",
     "council": "משגב"
   },
   {
-    "score": 382,
+    "score": 4,
     "name": "מכמורת",
     "council": "עמק חפר"
   },
   {
-    "score": 22,
+    "score": 3,
     "name": "מקווה ישראל",
     "council": ""
   },
   {
-    "score": 378,
+    "score": 2,
     "name": "משגב עם",
     "council": "הגליל העליון"
   },
   {
-    "score": 765,
+    "score": 3,
     "name": "משגב דב",
     "council": "גדרות"
   },
   {
-    "score": 670,
+    "score": 3,
     "name": "משמר איילון",
     "council": "גזר"
   },
   {
-    "score": 563,
+    "score": 3,
     "name": "משמר דוד",
     "council": "גזר"
   },
   {
-    "score": 130,
+    "score": 3,
     "name": "משמר העמק",
     "council": "מגידו"
   },
   {
-    "score": 395,
+    "score": 3,
     "name": "משמר הנגב",
     "council": "בני שמעון"
   },
   {
-    "score": 194,
+    "score": 3,
     "name": "משמר השרון",
     "council": "עמק חפר"
   },
   {
-    "score": 729,
+    "score": 4,
     "name": "משמר השבעה",
     "council": "שדות דן"
   },
   {
-    "score": 732,
+    "score": 2,
     "name": "משמר הירדן",
     "council": "מבואות החרמון"
   },
   {
-    "score": 3865,
+    "score": 4,
     "name": "משמר יהודה",
     "council": "גוש עציון"
   },
   {
-    "score": 213,
+    "score": 4,
     "name": "משמרות",
     "council": "מנשה"
   },
   {
-    "score": 425,
+    "score": 3,
     "name": "משמרת",
     "council": "לב השרון"
   },
   {
-    "score": 1370,
+    "score": 2,
     "name": "מצפה אילן",
     "council": "מנשה"
   },
   {
-    "score": 829,
+    "score": 3,
     "name": "מבטחים",
     "council": "אשכול"
   },
   {
-    "score": 58,
+    "score": 3,
     "name": "מצפה",
     "council": "הגליל התחתון"
   },
   {
-    "score": 1222,
-    "name": "מצפה אבי\"ב",
+    "score": 4,
+    "name": "מצפה אביב",
     "council": "משגב"
   },
   {
-    "score": 1190,
+    "score": 3,
     "name": "מצפה נטופה",
     "council": "הגליל התחתון"
   },
   {
-    "score": 99,
+    "score": 1,
     "name": "מצפה רמון",
     "council": ""
   },
   {
-    "score": 3610,
+    "score": 4,
     "name": "מצפה שלם",
     "council": "מגילות ים המלח"
   },
   {
-    "score": 3576,
+    "score": 2,
     "name": "מצפה יריחו",
     "council": "מטה בנימין"
   },
   {
-    "score": 104,
+    "score": 4,
     "name": "מזרע",
     "council": "עמק יזרעאל"
   },
   {
-    "score": 3797,
-    "name": "מודיעין עילית",
+    "score": 2,
+    "name": " מכבים רעות",
     "council": ""
   },
   {
-    "score": 1200,
-    "name": "מודיעין-מכבים-רעות",
-    "council": ""
-  },
-  {
-    "score": 269,
-    "name": "מולדת",
-    "council": "הגלבוע"
-  },
-  {
-    "score": 1163,
-    "name": "מורן",
-    "council": "משגב"
-  },
-  {
-    "score": 1178,
-    "name": "מורשת",
-    "council": "משגב"
-  },
-  {
-    "score": 208,
-    "name": "מוצא עילית",
-    "council": "מטה יהודה"
-  },
-  {
-    "score": 481,
-    "name": "מגאר",
-    "council": ""
-  },
-  {
-    "score": 635,
-    "name": "מוקייבלה",
-    "council": "הגלבוע"
-  },
-  {
-    "score": 3787,
-    "name": "נעלה",
-    "council": "מטה בנימין"
-  },
-  {
-    "score": 158,
-    "name": "נען",
-    "council": "גזר"
-  },
-  {
-    "score": 3620,
-    "name": "נערן",
-    "council": "ערבות הירדן"
-  },
-  {
-    "score": 524,
-    "name": "נאעורה",
-    "council": "הגלבוע"
-  },
-  {
-    "score": 3713,
-    "name": "נעמ\"ה",
-    "council": "ערבות הירדן"
-  },
-  {
-    "score": 1276,
-    "name": "אשבל",
-    "council": "משגב"
-  },
-  {
-    "score": 3646,
-    "name": "חמדת",
-    "council": "ערבות הירדן"
-  },
-  {
-    "score": 844,
-    "name": "נחל עוז",
-    "council": "שער הנגב"
-  },
-  {
-    "score": 1267,
-    "name": "שיטים",
-    "council": "חבל אילות"
-  },
-  {
-    "score": 2045,
-    "name": "נחלה",
-    "council": "יואב"
-  },
-  {
-    "score": 80,
-    "name": "נהלל",
-    "council": "עמק יזרעאל"
-  },
-  {
-    "score": 3767,
-    "name": "נחליאל",
-    "council": "מטה בנימין"
-  },
-  {
-    "score": 809,
-    "name": "נחם",
-    "council": "מטה יהודה"
-  },
-  {
-    "score": 9100,
-    "name": "נהריה",
-    "council": ""
-  },
-  {
-    "score": 522,
-    "name": "נחף",
-    "council": ""
-  },
-  {
-    "score": 433,
-    "name": "נחשולים",
-    "council": "חוף הכרמל"
-  },
-  {
-    "score": 777,
-    "name": "נחשון",
-    "council": "מטה יהודה"
-  },
-  {
-    "score": 705,
-    "name": "נחשונים",
-    "council": "דרום השרון"
-  },
-  {
-    "score": 1254,
-    "name": "נטף",
-    "council": "מטה יהודה"
-  },
-  {
-    "score": 4014,
-    "name": "נטור",
-    "council": "גולן"
-  },
-  {
-    "score": 1366,
-    "name": "נווה",
-    "council": "אשכול"
-  },
-  {
-    "score": 7300,
-    "name": "נצרת",
-    "council": ""
-  },
-  {
-    "score": 4551,
-    "name": "נאות גולן",
-    "council": "גולן"
-  },
-  {
-    "score": 1124,
-    "name": "נאות הכיכר",
-    "council": "תמר"
-  },
-  {
-    "score": 408,
-    "name": "נאות מרדכי",
-    "council": "הגליל העליון"
-  },
-  {
-    "score": 186,
-    "name": "נעורים",
-    "council": "עמק חפר"
-  },
-  {
-    "score": 315,
-    "name": "נגבה",
-    "council": "יואב"
-  },
-  {
-    "score": 3724,
-    "name": "נגוהות",
-    "council": "הר חברון"
-  },
-  {
-    "score": 449,
-    "name": "נחלים",
-    "council": "חבל מודיעין"
-  },
-  {
-    "score": 309,
-    "name": "נהורה",
-    "council": "לכיש"
-  },
-  {
-    "score": 59,
-    "name": "נחושה",
-    "council": "מטה יהודה"
-  },
-  {
-    "score": 523,
-    "name": "ניין",
-    "council": "בוסתאן אל-מרג'"
-  },
-  {
-    "score": 1143,
-    "name": "נס עמים",
-    "council": "מטה אשר"
-  },
-  {
-    "score": 825,
-    "name": "נס הרים",
-    "council": "מטה יהודה"
-  },
-  {
-    "score": 7200,
-    "name": "נס ציונה",
-    "council": ""
-  },
-  {
-    "score": 2500,
-    "name": "נשר",
-    "council": ""
-  },
-  {
-    "score": 1369,
-    "name": "נטע",
-    "council": "לכיש"
-  },
-  {
-    "score": 174,
-    "name": "נטעים",
-    "council": "גן רווה"
-  },
-  {
-    "score": 7400,
-    "name": "נתניה",
-    "council": ""
-  },
-  {
-    "score": 1242,
-    "name": "נתיב העשרה",
-    "council": "חוף אשקלון"
-  },
-  {
-    "score": 3555,
-    "name": "נתיב הגדוד",
-    "council": "ערבות הירדן"
-  },
-  {
-    "score": 693,
-    "name": "נתיב הל\"ה",
-    "council": "מטה יהודה"
-  },
-  {
-    "score": 792,
-    "name": "נתיב השיירה",
-    "council": "מטה אשר"
-  },
-  {
-    "score": 246,
-    "name": "נתיבות",
-    "council": ""
-  },
-  {
-    "score": 1147,
-    "name": "נטועה",
-    "council": "מעלה יוסף"
-  },
-  {
-    "score": 396,
-    "name": "נבטים",
-    "council": "בני שמעון"
-  },
-  {
-    "score": 3573,
-    "name": "נוה צוף",
-    "council": "מטה בנימין"
-  },
-  {
-    "score": 4303,
-    "name": "נווה אטי\"ב",
-    "council": "גולן"
-  },
-  {
-    "score": 926,
-    "name": "נווה אבות",
-    "council": ""
-  },
-  {
-    "score": 3725,
-    "name": "נווה דניאל",
-    "council": "גוש עציון"
-  },
-  {
-    "score": 296,
-    "name": "נווה איתן",
-    "council": "עמק המעיינות"
-  },
-  {
-    "score": 1279,
-    "name": "נווה חריף",
-    "council": "חבל אילות"
-  },
-  {
-    "score": 405,
-    "name": "נווה אילן",
-    "council": "מטה יהודה"
-  },
-  {
-    "score": 1071,
-    "name": "נווה מיכאל",
-    "council": "מטה יהודה"
-  },
-  {
-    "score": 827,
-    "name": "נווה מבטח",
-    "council": "באר טוביה"
-  },
-  {
-    "score": 1259,
-    "name": "נווה שלום",
-    "council": "מטה יהודה"
-  },
-  {
-    "score": 590,
-    "name": "נווה אור",
-    "council": "עמק המעיינות"
-  },
-  {
-    "score": 312,
-    "name": "נווה ים",
-    "council": "חוף הכרמל"
-  },
-  {
-    "score": 686,
-    "name": "נווה ימין",
-    "council": "דרום השרון"
-  },
-  {
-    "score": 858,
-    "name": "נווה ירק",
-    "council": "דרום השרון"
-  },
-  {
-    "score": 1314,
-    "name": "נווה זיו",
-    "council": "מעלה יוסף"
-  },
-  {
-    "score": 1057,
-    "name": "נווה זוהר",
-    "council": "תמר"
-  },
-  {
-    "score": 1372,
-    "name": "נצר חזני",
-    "council": "נחל שורק"
-  },
-  {
-    "score": 435,
-    "name": "נצר סרני",
-    "council": "גזר"
-  },
-  {
-    "score": 3655,
-    "name": "ניל\"י",
-    "council": "מטה בנימין"
-  },
-  {
-    "score": 4035,
-    "name": "נמרוד",
-    "council": "גולן"
-  },
-  {
-    "score": 348,
-    "name": "ניר עם",
-    "council": "שער הנגב"
-  },
-  {
-    "score": 2048,
-    "name": "ניר עקיבא",
-    "council": "מרחבים"
-  },
-  {
-    "score": 553,
-    "name": "ניר בנים",
-    "council": "באר טוביה"
-  },
-  {
-    "score": 256,
-    "name": "ניר דוד (תל עמל)",
-    "council": "עמק המעיינות"
-  },
-  {
-    "score": 808,
-    "name": "ניר אליהו",
-    "council": "דרום השרון"
-  },
-  {
-    "score": 769,
-    "name": "ניר עציון",
-    "council": "חוף הכרמל"
-  },
-  {
-    "score": 720,
-    "name": "ניר גלים",
-    "council": "חבל יבנה"
-  },
-  {
-    "score": 11,
-    "name": "ניר ח\"ן",
-    "council": "לכיש"
-  },
-  {
-    "score": 2047,
-    "name": "ניר משה",
-    "council": "מרחבים"
-  },
-  {
-    "score": 69,
-    "name": "ניר עוז",
-    "council": "אשכול"
-  },
-  {
-    "score": 165,
-    "name": "ניר יפה",
-    "council": "הגלבוע"
-  },
-  {
-    "score": 699,
-    "name": "ניר ישראל",
-    "council": "חוף אשקלון"
-  },
-  {
-    "score": 402,
-    "name": "ניר יצחק",
-    "council": "אשכול"
-  },
-  {
-    "score": 331,
-    "name": "ניר צבי",
-    "council": "שדות דן"
-  },
-  {
-    "score": 602,
-    "name": "נירים",
-    "council": "אשכול"
-  },
-  {
-    "score": 1236,
-    "name": "נירית",
-    "council": "דרום השרון"
-  },
-  {
-    "score": 351,
-    "name": "ניצן",
-    "council": "חוף אשקלון"
-  },
-  {
-    "score": 1419,
-    "name": "ניצן ב'",
-    "council": "חוף אשקלון"
-  },
-  {
-    "score": 1195,
-    "name": "ניצנה (קהילת חינוך)",
-    "council": "רמת נגב"
-  },
-  {
-    "score": 851,
-    "name": "ניצני עוז",
-    "council": "לב השרון"
-  },
-  {
-    "score": 1280,
-    "name": "ניצני סיני",
-    "council": "רמת נגב"
-  },
-  {
-    "score": 359,
-    "name": "ניצנים",
-    "council": "חוף אשקלון"
-  },
-  {
-    "score": 15,
-    "name": "נועם",
-    "council": "שפיר"
-  },
-  {
-    "score": 1333,
-    "name": "נוף איילון",
-    "council": "גזר"
-  },
-  {
-    "score": 1061,
-    "name": "נוף הגליל",
-    "council": ""
-  },
-  {
-    "score": 257,
-    "name": "נופך",
-    "council": "חבל מודיעין"
-  },
-  {
-    "score": 3790,
-    "name": "נופים",
-    "council": "שומרון"
-  },
-  {
-    "score": 1284,
-    "name": "נופית",
-    "council": "זבולון"
-  },
-  {
-    "score": 55,
-    "name": "נוגה",
-    "council": "לכיש"
-  },
-  {
-    "score": 3726,
-    "name": "נוקדים",
-    "council": "גוש עציון"
-  },
-  {
-    "score": 447,
-    "name": "נורדיה",
-    "council": "לב השרון"
-  },
-  {
-    "score": 4304,
-    "name": "נוב",
-    "council": "גולן"
-  },
-  {
-    "score": 833,
-    "name": "נורית",
-    "council": "הגלבוע"
-  },
-  {
-    "score": 4010,
-    "name": "אודם",
-    "council": "גולן"
-  },
-  {
-    "score": 31,
-    "name": "אופקים",
-    "council": ""
-  },
-  {
-    "score": 810,
-    "name": "עופר",
-    "council": "חוף הכרמל"
-  },
-  {
-    "score": 3617,
-    "name": "עופרה",
-    "council": "מטה בנימין"
-  },
-  {
-    "score": 1046,
-    "name": "אוהד",
-    "council": "אשכול"
-  },
-  {
-    "score": 737,
-    "name": "עולש",
-    "council": "עמק חפר"
-  },
-  {
-    "score": 1108,
-    "name": "אומן",
-    "council": "הגלבוע"
-  },
-  {
-    "score": 666,
-    "name": "עומר",
-    "council": ""
-  },
-  {
-    "score": 680,
-    "name": "אומץ",
-    "council": "עמק חפר"
-  },
-  {
-    "score": 1020,
-    "name": "אור עקיבא",
-    "council": ""
-  },
-  {
-    "score": 1294,
-    "name": "אור הגנוז",
-    "council": "מרום הגליל"
-  },
-  {
-    "score": 67,
-    "name": "אור הנר",
-    "council": "שער הנגב"
-  },
-  {
-    "score": 2400,
-    "name": "אור יהודה",
-    "council": ""
-  },
-  {
-    "score": 780,
-    "name": "אורה",
-    "council": "מטה יהודה"
-  },
-  {
-    "score": 882,
-    "name": "אורנים",
-    "council": "זבולון"
-  },
-  {
-    "score": 3760,
-    "name": "אורנית",
-    "council": ""
-  },
-  {
-    "score": 2012,
-    "name": "אורות",
-    "council": "באר טוביה"
-  },
-  {
-    "score": 4013,
-    "name": "אורטל",
-    "council": "גולן"
-  },
-  {
-    "score": 3748,
-    "name": "עתניאל",
-    "council": "הר חברון"
-  },
-  {
-    "score": 32,
-    "name": "עוצם",
-    "council": "לכיש"
-  },
-  {
-    "score": 2059,
-    "name": "פעמי תש\"ז",
-    "council": "מרחבים"
-  },
-  {
-    "score": 597,
-    "name": "פלמחים",
-    "council": "גן רווה"
-  },
-  {
-    "score": 1151,
-    "name": "פארן",
-    "council": "הערבה התיכונה"
-  },
-  {
-    "score": 7800,
-    "name": "פרדס חנה-כרכור",
-    "council": ""
-  },
-  {
-    "score": 171,
-    "name": "פרדסיה",
-    "council": ""
-  },
-  {
-    "score": 599,
-    "name": "פרוד",
-    "council": "מרום הגליל"
-  },
-  {
-    "score": 749,
-    "name": "פטיש",
-    "council": "מרחבים"
-  },
-  {
-    "score": 838,
-    "name": "פדיה",
-    "council": "גזר"
-  },
-  {
-    "score": 3768,
-    "name": "פדואל",
-    "council": "שומרון"
-  },
-  {
-    "score": 750,
-    "name": "פדויים",
-    "council": "מרחבים"
-  },
-  {
-    "score": 1185,
-    "name": "פלך",
-    "council": "משגב"
-  },
-  {
-    "score": 3723,
-    "name": "פני חבר",
-    "council": "הר חברון"
-  },
-  {
-    "score": 536,
-    "name": "פקיעין (בוקייעה)",
-    "council": ""
-  },
-  {
-    "score": 281,
-    "name": "פקיעין חדשה",
-    "council": "מעלה יוסף"
-  },
-  {
-    "score": 2053,
-    "name": "פרזון",
-    "council": "הגלבוע"
-  },
-  {
-    "score": 1231,
-    "name": "פרי גן",
-    "council": "אשכול"
-  },
-  {
-    "score": 3659,
-    "name": "פסגות",
-    "council": "מטה בנימין"
-  },
-  {
-    "score": 7900,
-    "name": "פתח תקווה",
-    "council": ""
-  },
-  {
-    "score": 839,
-    "name": "פתחיה",
-    "council": "גזר"
-  },
-  {
-    "score": 3615,
-    "name": "פצאל",
-    "council": "ערבות הירדן"
-  },
-  {
-    "score": 767,
-    "name": "פורת",
-    "council": "לב השרון"
-  },
-  {
-    "score": 1313,
-    "name": "פוריה עילית",
-    "council": "עמק הירדן"
-  },
-  {
-    "score": 1104,
-    "name": "פוריה - כפר עבודה",
-    "council": "עמק הירדן"
-  },
-  {
-    "score": 1105,
-    "name": "פוריה - נווה עובד",
-    "council": "עמק הירדן"
-  },
-  {
-    "score": 1211,
-    "name": "קדרים",
-    "council": "הגליל העליון"
-  },
-  {
-    "score": 195,
-    "name": "קדימה-צורן",
-    "council": ""
-  },
-  {
-    "score": 638,
-    "name": "קלנסווה",
-    "council": ""
-  },
-  {
-    "score": 3601,
-    "name": "קליה",
-    "council": "מגילות ים המלח"
-  },
-  {
-    "score": 3640,
-    "name": "קרני שומרון",
-    "council": ""
-  },
-  {
-    "score": 1243,
-    "name": "קציר",
-    "council": "מנשה"
-  },
-  {
-    "score": 4100,
-    "name": "קצרין",
-    "council": ""
-  },
-  {
-    "score": 3781,
-    "name": "קדר",
-    "council": "גוש עציון"
-  },
-  {
-    "score": 392,
-    "name": "קדמה",
-    "council": "יואב"
-  },
-  {
-    "score": 3557,
-    "name": "קדומים",
-    "council": ""
-  },
-  {
-    "score": 4024,
-    "name": "קלע",
-    "council": "גולן"
-  },
-  {
-    "score": 414,
-    "name": "קלחים",
-    "council": "מרחבים"
-  },
-  {
-    "score": 1167,
-    "name": "קיסריה",
-    "council": "חוף הכרמל"
-  },
-  {
-    "score": 4006,
-    "name": "קשת",
-    "council": "גולן"
-  },
-  {
-    "score": 1052,
-    "name": "קטורה",
-    "council": "חבל אילות"
-  },
-  {
-    "score": 334,
-    "name": "קבוצת יבנה",
-    "council": "חבל יבנה"
-  },
-  {
-    "score": 4025,
-    "name": "קדמת צבי",
-    "council": "גולן"
-  },
-  {
-    "score": 615,
-    "name": "קדרון",
-    "council": "ברנר"
-  },
-  {
-    "score": 78,
-    "name": "קרית ענבים",
-    "council": "מטה יהודה"
-  },
-  {
-    "score": 3611,
-    "name": "קרית ארבע",
-    "council": ""
-  },
-  {
-    "score": 6800,
-    "name": "קרית אתא",
-    "council": ""
-  },
-  {
-    "score": 9500,
-    "name": "קרית ביאליק",
-    "council": ""
-  },
-  {
-    "score": 469,
-    "name": "קרית עקרון",
-    "council": ""
-  },
-  {
-    "score": 2630,
-    "name": "קרית גת",
-    "council": ""
-  },
-  {
-    "score": 1034,
-    "name": "קרית מלאכי",
-    "council": ""
-  },
-  {
-    "score": 8200,
-    "name": "קרית מוצקין",
-    "council": ""
-  },
-  {
-    "score": 3746,
-    "name": "קרית נטפים",
-    "council": "שומרון"
-  },
-  {
-    "score": 2620,
-    "name": "קרית אונו",
-    "council": ""
-  },
-  {
-    "score": 412,
-    "name": "קרית שלמה",
-    "council": "חוף השרון"
-  },
-  {
-    "score": 2800,
-    "name": "קרית שמונה",
-    "council": ""
-  },
-  {
-    "score": 2300,
-    "name": "קרית טבעון",
-    "council": ""
-  },
-  {
-    "score": 9600,
-    "name": "קרית ים",
-    "council": ""
-  },
-  {
-    "score": 1137,
-    "name": "קרית יערים",
-    "council": ""
-  },
-  {
-    "score": 2039,
-    "name": "קרית יערים(מוסד)",
-    "council": "מטה יהודה"
-  },
-  {
-    "score": 766,
-    "name": "קוממיות",
-    "council": "שפיר"
-  },
-  {
-    "score": 1179,
-    "name": "קורנית",
-    "council": "משגב"
-  },
-  {
-    "score": 8700,
-    "name": "רעננה",
-    "council": ""
-  },
-  {
-    "score": 1161,
-    "name": "רהט",
-    "council": ""
-  },
-  {
-    "score": 1069,
-    "name": "רם-און",
-    "council": "הגלבוע"
-  },
-  {
-    "score": 135,
-    "name": "רמת דוד",
-    "council": "עמק יזרעאל"
-  },
-  {
-    "score": 8600,
-    "name": "רמת גן",
-    "council": ""
-  },
-  {
-    "score": 184,
-    "name": "רמת הכובש",
-    "council": "דרום השרון"
-  },
-  {
-    "score": 2650,
-    "name": "רמת השרון",
-    "council": ""
-  },
-  {
-    "score": 335,
-    "name": "רמת השופט",
-    "council": "מגידו"
-  },
-  {
-    "score": 4701,
-    "name": "רמת מגשימים",
-    "council": "גולן"
-  },
-  {
-    "score": 127,
-    "name": "רמת רחל",
-    "council": "מטה יהודה"
-  },
-  {
-    "score": 460,
-    "name": "רמת רזיאל",
-    "council": "מטה יהודה"
-  },
-  {
-    "score": 122,
-    "name": "רמת ישי",
-    "council": ""
-  },
-  {
-    "score": 178,
-    "name": "רמת יוחנן",
-    "council": "זבולון"
-  },
-  {
-    "score": 339,
-    "name": "רמת צבי",
-    "council": "הגלבוע"
-  },
-  {
-    "score": 543,
-    "name": "ראמה",
-    "council": ""
-  },
-  {
-    "score": 8500,
-    "name": "רמלה",
+    "score": 1,
+    "name": "מודיעין",
     "council": ""
   },
   {
     "score": 3,
+    "name": "מולדת",
+    "council": "הגלבוע"
+  },
+  {
+    "score": 3,
+    "name": "מורן",
+    "council": "משגב"
+  },
+  {
+    "score": 3,
+    "name": "מורשת",
+    "council": "משגב"
+  },
+  {
+    "score": 2,
+    "name": "מוצא",
+    "council": "מטה יהודה"
+  },
+  {
+    "score": 3,
+    "name": "נעלה",
+    "council": "מטה בנימין"
+  },
+  {
+    "score": 3,
+    "name": "נען",
+    "council": "גזר"
+  },
+  {
+    "score": 4,
+    "name": "נערן",
+    "council": "ערבות הירדן"
+  },
+  {
+    "score": 3,
+    "name": "נעמה",
+    "council": "ערבות הירדן"
+  },
+  {
+    "score": 4,
+    "name": "אשבל",
+    "council": "משגב"
+  },
+  {
+    "score": 3,
+    "name": "חמדת",
+    "council": "ערבות הירדן"
+  },
+  {
+    "score": 2,
+    "name": "נחל עוז",
+    "council": "שער הנגב"
+  },
+  {
+    "score": 3,
+    "name": "שיטים",
+    "council": "חבל אילות"
+  },
+  {
+    "score": 3,
+    "name": "נחלה",
+    "council": "יואב"
+  },
+  {
+    "score": 3,
+    "name": "נהלל",
+    "council": "עמק יזרעאל"
+  },
+  {
+    "score": 3,
+    "name": "נחליאל",
+    "council": "מטה בנימין"
+  },
+  {
+    "score": 3,
+    "name": "נחם",
+    "council": "מטה יהודה"
+  },
+  {
+    "score": 1,
+    "name": "נהריה",
+    "council": ""
+  },
+  {
+    "score": 3,
+    "name": "נחשולים",
+    "council": "חוף הכרמל"
+  },
+  {
+    "score": 3,
+    "name": "נחשון",
+    "council": "מטה יהודה"
+  },
+  {
+    "score": 3,
+    "name": "נחשונים",
+    "council": "דרום השרון"
+  },
+  {
+    "score": 2,
+    "name": "נטף",
+    "council": "מטה יהודה"
+  },
+  {
+    "score": 4,
+    "name": "נטור",
+    "council": "גולן"
+  },
+  {
+    "score": 2,
+    "name": "נווה",
+    "council": "אשכול"
+  },
+  {
+    "score": 2,
+    "name": "נצרת",
+    "council": ""
+  },
+  {
+    "score": 4,
+    "name": "נאות גולן",
+    "council": "גולן"
+  },
+  {
+    "score": 4,
+    "name": "נאות הכיכר",
+    "council": "תמר"
+  },
+  {
+    "score": 2,
+    "name": "נאות מרדכי",
+    "council": "הגליל העליון"
+  },
+  {
+    "score": 4,
+    "name": "נעורים",
+    "council": "עמק חפר"
+  },
+  {
+    "score": 3,
+    "name": "נגבה",
+    "council": "יואב"
+  },
+  {
+    "score": 4,
+    "name": "נגוהות",
+    "council": "הר חברון"
+  },
+  {
+    "score": 2,
+    "name": "נחלים",
+    "council": "חבל מודיעין"
+  },
+  {
+    "score": 4,
+    "name": "נהורה",
+    "council": "לכיש"
+  },
+  {
+    "score": 2,
+    "name": "נחושה",
+    "council": "מטה יהודה"
+  },
+  {
+    "score": 4,
+    "name": "נס עמים",
+    "council": "מטה אשר"
+  },
+  {
+    "score": 2,
+    "name": "נס הרים",
+    "council": "מטה יהודה"
+  },
+  {
+    "score": 1,
+    "name": "נס ציונה",
+    "council": ""
+  },
+  {
+    "score": 2,
+    "name": "נשר",
+    "council": ""
+  },
+  {
+    "score": 3,
+    "name": "נטע",
+    "council": "לכיש"
+  },
+  {
+    "score": 3,
+    "name": "נטעים",
+    "council": "גן רווה"
+  },
+  {
+    "score": 1,
+    "name": "נתניה",
+    "council": ""
+  },
+  {
+    "score": 3,
+    "name": "נתיב העשרה",
+    "council": "חוף אשקלון"
+  },
+  {
+    "score": 4,
+    "name": "נתיב הגדוד",
+    "council": "ערבות הירדן"
+  },
+  {
+    "score": 3,
+    "name": "נתיב הלה",
+    "council": "מטה יהודה"
+  },
+  {
+    "score": 4,
+    "name": "נתיב השיירה",
+    "council": "מטה אשר"
+  },
+  {
+    "score": 1,
+    "name": "נתיבות",
+    "council": ""
+  },
+  {
+    "score": 3,
+    "name": "נטועה",
+    "council": "מעלה יוסף"
+  },
+  {
+    "score": 2,
+    "name": "נבטים",
+    "council": "בני שמעון"
+  },
+  {
+    "score": 4,
+    "name": "נוה צוף",
+    "council": "מטה בנימין"
+  },
+  {
+    "score": 4,
+    "name": "נווה אטיב",
+    "council": "גולן"
+  },
+  {
+    "score": 4,
+    "name": "נווה אבות",
+    "council": ""
+  },
+  {
+    "score": 2,
+    "name": "נווה דניאל",
+    "council": "גוש עציון"
+  },
+  {
+    "score": 4,
+    "name": "נווה איתן",
+    "council": "עמק המעיינות"
+  },
+  {
+    "score": 4,
+    "name": "נווה חריף",
+    "council": "חבל אילות"
+  },
+  {
+    "score": 2,
+    "name": "נווה אילן",
+    "council": "מטה יהודה"
+  },
+  {
+    "score": 3,
+    "name": "נווה מיכאל",
+    "council": "מטה יהודה"
+  },
+  {
+    "score": 4,
+    "name": "נווה מבטח",
+    "council": "באר טוביה"
+  },
+  {
+    "score": 4,
+    "name": "נווה שלום",
+    "council": "מטה יהודה"
+  },
+  {
+    "score": 4,
+    "name": "נווה אור",
+    "council": "עמק המעיינות"
+  },
+  {
+    "score": 4,
+    "name": "נווה ים",
+    "council": "חוף הכרמל"
+  },
+  {
+    "score": 4,
+    "name": "נווה ימין",
+    "council": "דרום השרון"
+  },
+  {
+    "score": 4,
+    "name": "נווה ירק",
+    "council": "דרום השרון"
+  },
+  {
+    "score": 4,
+    "name": "נווה זיו",
+    "council": "מעלה יוסף"
+  },
+  {
+    "score": 4,
+    "name": "נווה זוהר",
+    "council": "תמר"
+  },
+  {
+    "score": 3,
+    "name": "נצר חזני",
+    "council": "נחל שורק"
+  },
+  {
+    "score": 3,
+    "name": "נצר סרני",
+    "council": "גזר"
+  },
+  {
+    "score": 3,
+    "name": "נילי",
+    "council": "מטה בנימין"
+  },
+  {
+    "score": 3,
+    "name": "נמרוד",
+    "council": "גולן"
+  },
+  {
+    "score": 3,
+    "name": "ניר עם",
+    "council": "שער הנגב"
+  },
+  {
+    "score": 4,
+    "name": "ניר עקיבא",
+    "council": "מרחבים"
+  },
+  {
+    "score": 4,
+    "name": "ניר בנים",
+    "council": "באר טוביה"
+  },
+  {
+    "score": 3,
+    "name": "ניר דוד",
+    "council": "עמק המעיינות"
+  },
+  {
+    "score": 3,
+    "name": "ניר אליהו",
+    "council": "דרום השרון"
+  },
+  {
+    "score": 3,
+    "name": "ניר עציון",
+    "council": "חוף הכרמל"
+  },
+  {
+    "score": 3,
+    "name": "ניר גלים",
+    "council": "חבל יבנה"
+  },
+  {
+    "score": 4,
+    "name": "ניר חן",
+    "council": "לכיש"
+  },
+  {
+    "score": 4,
+    "name": "ניר משה",
+    "council": "מרחבים"
+  },
+  {
+    "score": 2,
+    "name": "ניר עוז",
+    "council": "אשכול"
+  },
+  {
+    "score": 4,
+    "name": "ניר יפה",
+    "council": "הגלבוע"
+  },
+  {
+    "score": 4,
+    "name": "ניר ישראל",
+    "council": "חוף אשקלון"
+  },
+  {
+    "score": 4,
+    "name": "ניר יצחק",
+    "council": "אשכול"
+  },
+  {
+    "score": 4,
+    "name": "ניר צבי",
+    "council": "שדות דן"
+  },
+  {
+    "score": 4,
+    "name": "נירים",
+    "council": "אשכול"
+  },
+  {
+    "score": 4,
+    "name": "נירית",
+    "council": "דרום השרון"
+  },
+  {
+    "score": 2,
+    "name": "ניצן",
+    "council": "חוף אשקלון"
+  },
+  {
+    "score": 3,
+    "name": "ניצנה",
+    "council": "רמת נגב"
+  },
+  {
+    "score": 4,
+    "name": "ניצני עוז",
+    "council": "לב השרון"
+  },
+  {
+    "score": 4,
+    "name": "ניצני סיני",
+    "council": "רמת נגב"
+  },
+  {
+    "score": 2,
+    "name": "ניצנים",
+    "council": "חוף אשקלון"
+  },
+  {
+    "score": 3,
+    "name": "נועם",
+    "council": "שפיר"
+  },
+  {
+    "score": 4,
+    "name": "נוף איילון",
+    "council": "גזר"
+  },
+  {
+    "score": 2,
+    "name": "נוף הגליל",
+    "council": ""
+  },
+  {
+    "score": 4,
+    "name": "נופך",
+    "council": "חבל מודיעין"
+  },
+  {
+    "score": 3,
+    "name": "נופים",
+    "council": "שומרון"
+  },
+  {
+    "score": 3,
+    "name": "נופית",
+    "council": "זבולון"
+  },
+  {
+    "score": 4,
+    "name": "נוגה",
+    "council": "לכיש"
+  },
+  {
+    "score": 2,
+    "name": "נוקדים",
+    "council": "גוש עציון"
+  },
+  {
+    "score": 4,
+    "name": "נורדיה",
+    "council": "לב השרון"
+  },
+  {
+    "score": 3,
+    "name": "נוב",
+    "council": "גולן"
+  },
+  {
+    "score": 3,
+    "name": "נורית",
+    "council": "הגלבוע"
+  },
+  {
+    "score": 4,
+    "name": "אודם",
+    "council": "גולן"
+  },
+  {
+    "score": 1,
+    "name": "אופקים",
+    "council": ""
+  },
+  {
+    "score": 3,
+    "name": "עופר",
+    "council": "חוף הכרמל"
+  },
+  {
+    "score": 2,
+    "name": "עופרה",
+    "council": "מטה בנימין"
+  },
+  {
+    "score": 3,
+    "name": "אוהד",
+    "council": "אשכול"
+  },
+  {
+    "score": 4,
+    "name": "עולש",
+    "council": "עמק חפר"
+  },
+  {
+    "score": 3,
+    "name": "אומן",
+    "council": "הגלבוע"
+  },
+  {
+    "score": 3,
+    "name": "עומר",
+    "council": ""
+  },
+  {
+    "score": 4,
+    "name": "אומץ",
+    "council": "עמק חפר"
+  },
+  {
+    "score": 3,
+    "name": "אור עקיבא",
+    "council": ""
+  },
+  {
+    "score": 4,
+    "name": "אור הגנוז",
+    "council": "מרום הגליל"
+  },
+  {
+    "score": 4,
+    "name": "אור הנר",
+    "council": "שער הנגב"
+  },
+  {
+    "score": 3,
+    "name": "אור יהודה",
+    "council": ""
+  },
+  {
+    "score": 2,
+    "name": "אורה",
+    "council": "מטה יהודה"
+  },
+  {
+    "score": 3,
+    "name": "אורנים",
+    "council": "זבולון"
+  },
+  {
+    "score": 3,
+    "name": "אורנית",
+    "council": ""
+  },
+  {
+    "score": 3,
+    "name": "אורות",
+    "council": "באר טוביה"
+  },
+  {
+    "score": 3,
+    "name": "אורטל",
+    "council": "גולן"
+  },
+  {
+    "score": 2,
+    "name": "עתניאל",
+    "council": "הר חברון"
+  },
+  {
+    "score": 3,
+    "name": "עוצם",
+    "council": "לכיש"
+  },
+  {
+    "score": 4,
+    "name": "פעמי תשז",
+    "council": "מרחבים"
+  },
+  {
+    "score": 2,
+    "name": "פלמחים",
+    "council": "גן רווה"
+  },
+  {
+    "score": 3,
+    "name": "פארן",
+    "council": "הערבה התיכונה"
+  },
+  {
+    "score": 2,
+    "name": "פרדס חנה כרכור",
+    "council": ""
+  },
+  {
+    "score": 3,
+    "name": "פרדסיה",
+    "council": ""
+  },
+  {
+    "score": 4,
+    "name": "פרוד",
+    "council": "מרום הגליל"
+  },
+  {
+    "score": 4,
+    "name": "פטיש",
+    "council": "מרחבים"
+  },
+  {
+    "score": 4,
+    "name": "פדיה",
+    "council": "גזר"
+  },
+  {
+    "score": 2,
+    "name": "פדואל",
+    "council": "שומרון"
+  },
+  {
+    "score": 3,
+    "name": "פדויים",
+    "council": "מרחבים"
+  },
+  {
+    "score": 3,
+    "name": "פלך",
+    "council": "משגב"
+  },
+  {
+    "score": 3,
+    "name": "פני חבר",
+    "council": "הר חברון"
+  },
+  {
+    "score": 3,
+    "name": "פקיעין",
+    "council": "מעלה יוסף"
+  },
+  {
+    "score": 4,
+    "name": "פרזון",
+    "council": "הגלבוע"
+  },
+  {
+    "score": 3,
+    "name": "פרי גן",
+    "council": "אשכול"
+  },
+  {
+    "score": 2,
+    "name": "פסגות",
+    "council": "מטה בנימין"
+  },
+  {
+    "score": 1,
+    "name": "פתח תקווה",
+    "council": ""
+  },
+  {
+    "score": 3,
+    "name": "פתחיה",
+    "council": "גזר"
+  },
+  {
+    "score": 4,
+    "name": "פצאל",
+    "council": "ערבות הירדן"
+  },
+  {
+    "score": 3,
+    "name": "פורת",
+    "council": "לב השרון"
+  },
+  {
+    "score": 3,
+    "name": "פוריה",
+    "council": "עמק הירדן"
+  },
+  {
+    "score": 3,
+    "name": "פוריה - כפר עבודה",
+    "council": "עמק הירדן"
+  },
+  {
+    "score": 3,
+    "name": "קדרים",
+    "council": "הגליל העליון"
+  },
+  {
+    "score": 2,
+    "name": "קדימה צורן",
+    "council": ""
+  },
+  {
+    "score": 4,
+    "name": "קליה",
+    "council": "מגילות ים המלח"
+  },
+  {
+    "score": 2,
+    "name": "קרני שומרון",
+    "council": ""
+  },
+  {
+    "score": 3,
+    "name": "קציר",
+    "council": "מנשה"
+  },
+  {
+    "score": 2,
+    "name": "קצרין",
+    "council": ""
+  },
+  {
+    "score": 2,
+    "name": "קדר",
+    "council": "גוש עציון"
+  },
+  {
+    "score": 3,
+    "name": "קדמה",
+    "council": "יואב"
+  },
+  {
+    "score": 2,
+    "name": "קדומים",
+    "council": ""
+  },
+  {
+    "score": 3,
+    "name": "קלע",
+    "council": "גולן"
+  },
+  {
+    "score": 3,
+    "name": "קלחים",
+    "council": "מרחבים"
+  },
+  {
+    "score": 1,
+    "name": "קיסריה",
+    "council": "חוף הכרמל"
+  },
+  {
+    "score": 2,
+    "name": "קשת",
+    "council": "גולן"
+  },
+  {
+    "score": 3,
+    "name": "קטורה",
+    "council": "חבל אילות"
+  },
+  {
+    "score": 3,
+    "name": "קבוצת יבנה",
+    "council": "חבל יבנה"
+  },
+  {
+    "score": 3,
+    "name": "קדמת צבי",
+    "council": "גולן"
+  },
+  {
+    "score": 3,
+    "name": "קדרון",
+    "council": "ברנר"
+  },
+  {
+    "score": 3,
+    "name": "קרית ענבים",
+    "council": "מטה יהודה"
+  },
+  {
+    "score": 2,
+    "name": "קרית ארבע",
+    "council": ""
+  },
+  {
+    "score": 1,
+    "name": "קרית אתא",
+    "council": ""
+  },
+  {
+    "score": 1,
+    "name": "קרית ביאליק",
+    "council": ""
+  },
+  {
+    "score": 2,
+    "name": "קרית עקרון",
+    "council": ""
+  },
+  {
+    "score": 1,
+    "name": "קרית גת",
+    "council": ""
+  },
+  {
+    "score": 1,
+    "name": "קרית מלאכי",
+    "council": ""
+  },
+  {
+    "score": 2,
+    "name": "קרית מוצקין",
+    "council": ""
+  },
+  {
+    "score": 3,
+    "name": "קרית נטפים",
+    "council": "שומרון"
+  },
+  {
+    "score": 1,
+    "name": "קרית אונו",
+    "council": ""
+  },
+  {
+    "score": 3,
+    "name": "קרית שלמה",
+    "council": "חוף השרון"
+  },
+  {
+    "score": 1,
+    "name": "קרית שמונה",
+    "council": ""
+  },
+  {
+    "score": 1,
+    "name": "קרית טבעון",
+    "council": ""
+  },
+  {
+    "score": 3,
+    "name": "קרית ים",
+    "council": ""
+  },
+  {
+    "score": 3,
+    "name": "קרית יערים",
+    "council": ""
+  },
+  {
+    "score": 2,
+    "name": "קוממיות",
+    "council": "שפיר"
+  },
+  {
+    "score": 4,
+    "name": "קורנית",
+    "council": "משגב"
+  },
+  {
+    "score": 1,
+    "name": "רעננה",
+    "council": ""
+  },
+  {
+    "score": 4,
+    "name": "רם און",
+    "council": "הגלבוע"
+  },
+  {
+    "score": 3,
+    "name": "רמת דוד",
+    "council": "עמק יזרעאל"
+  },
+  {
+    "score": 1,
+    "name": "רמת גן",
+    "council": ""
+  },
+  {
+    "score": 4,
+    "name": "רמת הכובש",
+    "council": "דרום השרון"
+  },
+  {
+    "score": 1,
+    "name": "רמת השרון",
+    "council": ""
+  },
+  {
+    "score": 3,
+    "name": "רמת השופט",
+    "council": "מגידו"
+  },
+  {
+    "score": 2,
+    "name": "רמת מגשימים",
+    "council": "גולן"
+  },
+  {
+    "score": 2,
+    "name": "רמת רחל",
+    "council": "מטה יהודה"
+  },
+  {
+    "score": 3,
+    "name": "רמת רזיאל",
+    "council": "מטה יהודה"
+  },
+  {
+    "score": 2,
+    "name": "רמת ישי",
+    "council": ""
+  },
+  {
+    "score": 3,
+    "name": "רמת יוחנן",
+    "council": "זבולון"
+  },
+  {
+    "score": 3,
+    "name": "רמת צבי",
+    "council": "הגלבוע"
+  },
+  {
+    "score": 1,
+    "name": "רמלה",
+    "council": ""
+  },
+  {
+    "score": 2,
     "name": "רמות",
     "council": "גולן"
   },
   {
-    "score": 206,
+    "score": 4,
     "name": "רמות השבים",
     "council": "דרום השרון"
   },
   {
-    "score": 735,
+    "score": 3,
     "name": "רמות מאיר",
     "council": "גזר"
   },
   {
-    "score": 445,
+    "score": 3,
     "name": "רמות מנשה",
     "council": "מגידו"
   },
   {
-    "score": 372,
+    "score": 3,
     "name": "רמות נפתלי",
     "council": "מבואות החרמון"
   },
   {
-    "score": 789,
+    "score": 4,
     "name": "רנן",
     "council": "מרחבים"
   },
   {
-    "score": 1228,
+    "score": 3,
     "name": "רקפת",
     "council": "משגב"
   },
   {
-    "score": 1334,
-    "name": "ראס אל-עין",
-    "council": "משגב"
-  },
-  {
-    "score": 990,
-    "name": "ראס עלי",
-    "council": "זבולון"
-  },
-  {
-    "score": 1225,
+    "score": 3,
     "name": "רביד",
     "council": "עמק הירדן"
   },
   {
-    "score": 713,
+    "score": 3,
     "name": "רעים",
     "council": "אשכול"
   },
   {
-    "score": 444,
+    "score": 3,
     "name": "רגבים",
     "council": "מנשה"
   },
   {
-    "score": 390,
+    "score": 3,
     "name": "רגבה",
     "council": "מטה אשר"
   },
   {
-    "score": 3568,
+    "score": 3,
     "name": "ריחן",
     "council": "שומרון"
   },
   {
-    "score": 3822,
+    "score": 3,
     "name": "רחלים",
     "council": "שומרון"
   },
   {
-    "score": 854,
+    "score": 3,
     "name": "רחוב",
     "council": "עמק המעיינות"
   },
   {
-    "score": 8400,
+    "score": 1,
     "name": "רחובות",
     "council": ""
   },
   {
-    "score": 540,
+    "score": 3,
     "name": "ריחאניה",
     "council": "מרום הגליל"
   },
   {
-    "score": 542,
-    "name": "ריינה",
-    "council": ""
-  },
-  {
-    "score": 922,
+    "score": 3,
     "name": "רכסים",
     "council": ""
   },
   {
-    "score": 437,
+    "score": 3,
     "name": "רשפים",
     "council": "עמק המעיינות"
   },
   {
-    "score": 1260,
+    "score": 3,
     "name": "רתמים",
     "council": "רמת נגב"
   },
   {
-    "score": 564,
+    "score": 3,
     "name": "רבדים",
     "council": "יואב"
   },
   {
-    "score": 3795,
+    "score": 3,
     "name": "רבבה",
     "council": "שומרון"
   },
   {
-    "score": 354,
+    "score": 3,
     "name": "רביבים",
     "council": "רמת נגב"
   },
   {
-    "score": 2051,
+    "score": 3,
     "name": "רווחה",
     "council": "שפיר"
   },
   {
-    "score": 2016,
+    "score": 3,
     "name": "רוויה",
     "council": "עמק המעיינות"
   },
   {
-    "score": 3565,
+    "score": 3,
     "name": "רימונים",
     "council": "מטה בנימין"
   },
   {
-    "score": 616,
+    "score": 3,
     "name": "רינתיה",
     "council": "חבל מודיעין"
   },
   {
-    "score": 8300,
+    "score": 1,
     "name": "ראשון לציון",
     "council": ""
   },
   {
-    "score": 247,
+    "score": 3,
     "name": "רשפון",
     "council": "חוף השרון"
   },
   {
-    "score": 3619,
+    "score": 3,
     "name": "רועי",
     "council": "ערבות הירדן"
   },
   {
-    "score": 2640,
+    "score": 2,
     "name": "ראש העין",
     "council": ""
   },
   {
-    "score": 26,
+    "score": 1,
     "name": "ראש פינה",
     "council": ""
   },
   {
-    "score": 3602,
+    "score": 2,
     "name": "ראש צורים",
     "council": "גוש עציון"
   },
   {
-    "score": 3782,
+    "score": 3,
     "name": "רותם",
     "council": "ערבות הירדן"
   },
   {
-    "score": 1341,
+    "score": 4,
     "name": "רוח מדבר",
     "council": "רמת נגב"
   },
   {
-    "score": 362,
+    "score": 3,
     "name": "רוחמה",
     "council": "שער הנגב"
   },
   {
-    "score": 997,
-    "name": "רומת הייב",
-    "council": "אל-בטוף"
-  },
-  {
-    "score": 539,
-    "name": "רומאנה",
-    "council": "אל-בטוף"
-  },
-  {
-    "score": 419,
+    "score": 3,
     "name": "סעד",
     "council": "שדות נגב"
   },
   {
-    "score": 454,
+    "score": 3,
     "name": "סער",
     "council": "מטה אשר"
   },
   {
-    "score": 1360,
-    "name": "סעוה",
-    "council": "אל קסום"
-  },
-  {
-    "score": 525,
-    "name": "סאג'ור",
-    "council": ""
-  },
-  {
-    "score": 7500,
-    "name": "סח'נין",
-    "council": ""
-  },
-  {
-    "score": 3567,
+    "score": 3,
     "name": "סלעית",
     "council": "שומרון"
   },
   {
-    "score": 1245,
+    "score": 4,
     "name": "סלמה",
     "council": "משגב"
   },
   {
-    "score": 1156,
+    "score": 4,
     "name": "סמר",
     "council": "חבל אילות"
   },
   {
-    "score": 636,
-    "name": "צנדלה",
-    "council": "הגלבוע"
-  },
-  {
-    "score": 1176,
+    "score": 3,
     "name": "ספיר",
     "council": "הערבה התיכונה"
   },
   {
-    "score": 126,
+    "score": 3,
     "name": "שריד",
     "council": "עמק יזרעאל"
   },
   {
-    "score": 578,
+    "score": 4,
     "name": "סאסא",
     "council": "הגליל העליון"
   },
   {
-    "score": 587,
+    "score": 1,
     "name": "סביון",
     "council": ""
   },
   {
-    "score": 1223,
+    "score": 4,
     "name": "שדי אברהם",
     "council": "אשכול"
   },
   {
-    "score": 885,
+    "score": 2,
     "name": "שדה בוקר",
     "council": "רמת נגב"
   },
   {
-    "score": 36,
+    "score": 3,
     "name": "שדה דוד",
     "council": "לכיש"
   },
   {
-    "score": 861,
+    "score": 2,
     "name": "שדה אליעזר",
     "council": "מבואות החרמון"
   },
   {
-    "score": 304,
+    "score": 3,
     "name": "שדה אליהו",
     "council": "עמק המעיינות"
   },
   {
-    "score": 2015,
+    "score": 3,
     "name": "שדי חמד",
     "council": "דרום השרון"
   },
   {
-    "score": 721,
+    "score": 3,
     "name": "שדה אילן",
     "council": "הגליל התחתון"
   },
   {
-    "score": 18,
+    "score": 3,
     "name": "שדה משה",
     "council": "לכיש"
   },
   {
-    "score": 259,
+    "score": 3,
     "name": "שדה נחום",
     "council": "עמק המעיינות"
   },
   {
-    "score": 329,
+    "score": 3,
     "name": "שדה נחמיה",
     "council": "הגליל העליון"
   },
   {
-    "score": 1058,
+    "score": 3,
     "name": "שדה ניצן",
     "council": "אשכול"
   },
   {
-    "score": 2057,
+    "score": 3,
     "name": "שדי תרומות",
     "council": "עמק המעיינות"
   },
   {
-    "score": 739,
+    "score": 4,
     "name": "שדה עוזיהו",
     "council": "באר טוביה"
   },
   {
-    "score": 284,
+    "score": 4,
     "name": "שדה ורבורג",
     "council": "דרום השרון"
   },
   {
-    "score": 142,
+    "score": 3,
     "name": "שדה יעקב",
     "council": "עמק יזרעאל"
   },
   {
-    "score": 2008,
+    "score": 3,
     "name": "שדה יצחק",
     "council": "מנשה"
   },
   {
-    "score": 293,
+    "score": 3,
     "name": "שדה יואב",
     "council": "יואב"
   },
   {
-    "score": 2049,
+    "score": 3,
     "name": "שדה צבי",
     "council": "מרחבים"
   },
   {
-    "score": 1031,
+    "score": 1,
     "name": "שדרות",
     "council": ""
   },
   {
-    "score": 27,
+    "score": 3,
     "name": "שדות מיכה",
     "council": "מטה יהודה"
   },
   {
-    "score": 327,
+    "score": 3,
     "name": "שדות ים",
     "council": "חוף הכרמל"
   },
   {
-    "score": 1286,
-    "name": "שגב-שלום",
-    "council": ""
-  },
-  {
-    "score": 2046,
+    "score": 3,
     "name": "סגולה",
     "council": "יואב"
   },
   {
-    "score": 1132,
+    "score": 3,
     "name": "שניר",
     "council": "הגליל העליון"
   },
   {
-    "score": 538,
-    "name": "שעב",
-    "council": ""
-  },
-  {
-    "score": 4009,
+    "score": 3,
     "name": "שעל",
     "council": "גולן"
   },
   {
-    "score": 856,
+    "score": 2,
     "name": "שעלבים",
     "council": "גזר"
   },
   {
-    "score": 661,
+    "score": 4,
     "name": "שער אפרים",
     "council": "לב השרון"
   },
   {
-    "score": 237,
+    "score": 4,
     "name": "שער העמקים",
     "council": "זבולון"
   },
   {
-    "score": 264,
+    "score": 4,
     "name": "שער הגולן",
     "council": "עמק הירדן"
   },
   {
-    "score": 921,
+    "score": 3,
     "name": "שער מנשה",
     "council": "מנשה"
   },
   {
-    "score": 3826,
+    "score": 3,
     "name": "שער שומרון",
     "council": ""
   },
   {
-    "score": 306,
+    "score": 4,
     "name": "שדמות דבורה",
     "council": "הגליל התחתון"
   },
   {
-    "score": 3578,
+    "score": 2,
     "name": "שדמות מחולה",
     "council": "ערבות הירדן"
   },
   {
-    "score": 692,
+    "score": 4,
     "name": "שפיר",
     "council": "שפיר"
   },
   {
-    "score": 7,
+    "score": 3,
     "name": "שחר",
     "council": "לכיש"
   },
   {
-    "score": 3868,
+    "score": 3,
     "name": "שחרית",
     "council": "שומרון"
   },
   {
-    "score": 1266,
+    "score": 3,
     "name": "שחרות",
     "council": "חבל אילות"
   },
   {
-    "score": 1373,
+    "score": 4,
     "name": "שלווה במדבר",
     "council": "רמת נגב"
   },
   {
-    "score": 873,
+    "score": 3,
     "name": "שלווה",
     "council": "שפיר"
   },
   {
-    "score": 432,
+    "score": 4,
     "name": "שמרת",
     "council": "מטה אשר"
   },
   {
-    "score": 366,
+    "score": 3,
     "name": "שמיר",
     "council": "הגליל העליון"
   },
   {
-    "score": 1287,
+    "score": 3,
     "name": "שני",
     "council": "הר חברון"
   },
   {
-    "score": 3649,
+    "score": 3,
     "name": "שקד",
     "council": "שומרון"
   },
   {
-    "score": 292,
+    "score": 3,
     "name": "שרונה",
     "council": "הגליל התחתון"
   },
   {
-    "score": 398,
+    "score": 4,
     "name": "שרשרת",
     "council": "שדות נגב"
   },
   {
-    "score": 1377,
+    "score": 4,
     "name": "שבי דרום",
     "council": "מרחבים"
   },
   {
-    "score": 3571,
+    "score": 2,
     "name": "שבי שומרון",
     "council": "שומרון"
   },
   {
-    "score": 282,
+    "score": 3,
     "name": "שבי ציון",
     "council": "מטה אשר"
   },
   {
-    "score": 324,
+    "score": 3,
     "name": "שאר ישוב",
     "council": "מבואות החרמון"
   },
   {
-    "score": 555,
+    "score": 3,
     "name": "שדמה",
     "council": "גדרות"
   },
   {
-    "score": 8800,
-    "name": "שפרעם",
-    "council": ""
-  },
-  {
-    "score": 232,
+    "score": 3,
     "name": "שפיים",
     "council": "חוף השרון"
   },
   {
-    "score": 846,
+    "score": 3,
     "name": "שפר",
     "council": "מרום הגליל"
   },
   {
-    "score": 658,
-    "name": "שייח' דנון",
-    "council": "מטה אשר"
-  },
-  {
-    "score": 1160,
+    "score": 4,
     "name": "שכניה",
     "council": "משגב"
   },
   {
-    "score": 812,
+    "score": 3,
     "name": "שלומי",
     "council": ""
   },
   {
-    "score": 439,
+    "score": 3,
     "name": "שלוחות",
     "council": "עמק המעיינות"
   },
   {
-    "score": 1233,
+    "score": 3,
     "name": "שקף",
     "council": "לכיש"
   },
   {
-    "score": 1045,
+    "score": 4,
     "name": "שתולה",
     "council": "מעלה יוסף"
   },
   {
-    "score": 763,
+    "score": 4,
     "name": "שתולים",
     "council": "באר טוביה"
   },
   {
-    "score": 1378,
+    "score": 4,
     "name": "שיזף",
     "council": "רמת נגב"
   },
   {
-    "score": 527,
+    "score": 4,
     "name": "שזור",
     "council": "מרום הגליל"
   },
   {
-    "score": 865,
+    "score": 4,
     "name": "שיבולים",
     "council": "שדות נגב"
   },
   {
-    "score": 913,
-    "name": "שבלי - אום אל-גנם",
-    "council": ""
-  },
-  {
-    "score": 1165,
+    "score": 3,
     "name": "שילת",
     "council": "חבל מודיעין"
   },
   {
-    "score": 3641,
+    "score": 3,
     "name": "שילה",
     "council": "מטה בנימין"
   },
   {
-    "score": 3784,
+    "score": 4,
     "name": "שמעה",
     "council": "הר חברון"
   },
   {
-    "score": 1337,
+    "score": 4,
     "name": "שמשית",
     "council": "עמק יזרעאל"
   },
   {
-    "score": 1197,
+    "score": 4,
     "name": "נאות סמדר",
     "council": "חבל אילות"
   },
   {
-    "score": 1364,
+    "score": 3,
     "name": "שלומית",
     "council": "אשכול"
   },
   {
-    "score": 741,
+    "score": 3,
     "name": "שואבה",
     "council": "מטה יהודה"
   },
   {
-    "score": 1304,
+    "score": 2,
     "name": "שוהם",
     "council": ""
   },
   {
-    "score": 614,
+    "score": 3,
     "name": "שומרה",
     "council": "מעלה יוסף"
   },
   {
-    "score": 1265,
+    "score": 3,
     "name": "שומריה",
     "council": "בני שמעון"
   },
   {
-    "score": 415,
+    "score": 3,
     "name": "שוקדה",
     "council": "שדות נגב"
   },
   {
-    "score": 1235,
+    "score": 3,
     "name": "שורשים",
     "council": "משגב"
   },
   {
-    "score": 456,
+    "score": 2,
     "name": "שורש",
     "council": "מטה יהודה"
   },
   {
-    "score": 224,
+    "score": 4,
     "name": "שושנת העמקים",
     "council": "עמק חפר"
   },
   {
-    "score": 1102,
+    "score": 4,
     "name": "צוקי ים",
     "council": "עמק חפר"
   },
   {
-    "score": 394,
+    "score": 4,
     "name": "שובל",
     "council": "בני שמעון"
   },
   {
-    "score": 761,
+    "score": 4,
     "name": "שובה",
     "council": "שדות נגב"
   },
   {
-    "score": 610,
+    "score": 4,
     "name": "סתריה",
     "council": "גזר"
   },
   {
-    "score": 1238,
+    "score": 3,
     "name": "סופה",
     "council": "אשכול"
   },
   {
-    "score": 526,
-    "name": "סולם",
-    "council": "בוסתאן אל-מרג'"
-  },
-  {
-    "score": 3756,
+    "score": 2,
     "name": "סוסיה",
     "council": "הר חברון"
   },
   {
-    "score": 752,
+    "score": 4,
     "name": "תעוז",
     "council": "מטה יהודה"
   },
   {
-    "score": 462,
+    "score": 3,
     "name": "טל שחר",
     "council": "מטה יהודה"
   },
   {
-    "score": 1181,
+    "score": 3,
     "name": "טל-אל",
     "council": "משגב"
   },
   {
-    "score": 2050,
-    "name": "תלמי ביל\"ו",
+    "score": 4,
+    "name": "תלמי בילו",
     "council": "מרחבים"
   },
   {
-    "score": 2003,
+    "score": 4,
     "name": "תלמי אלעזר",
     "council": "מנשה"
   },
   {
-    "score": 1051,
+    "score": 4,
     "name": "תלמי אליהו",
     "council": "אשכול"
   },
   {
-    "score": 744,
+    "score": 4,
     "name": "תלמי יפה",
     "council": "חוף אשקלון"
   },
   {
-    "score": 727,
+    "score": 4,
     "name": "תלמי יחיאל",
     "council": "באר טוביה"
   },
   {
-    "score": 1237,
+    "score": 4,
     "name": "תלמי יוסף",
     "council": "אשכול"
   },
   {
-    "score": 3788,
+    "score": 3,
     "name": "טלמון",
     "council": "מטה בנימין"
   },
   {
-    "score": 8900,
-    "name": "טמרה",
-    "council": ""
-  },
-  {
-    "score": 547,
-    "name": "טמרה (יזרעאל)",
-    "council": "הגלבוע"
-  },
-  {
-    "score": 1346,
-    "name": "תראבין א-צאנע(ישוב)",
-    "council": "אל קסום"
-  },
-  {
-    "score": 778,
+    "score": 4,
     "name": "תרום",
     "council": "מטה יהודה"
   },
   {
-    "score": 2730,
-    "name": "טייבה",
-    "council": ""
-  },
-  {
-    "score": 497,
-    "name": "טייבה (בעמק)",
-    "council": "הגלבוע"
-  },
-  {
-    "score": 2062,
+    "score": 4,
     "name": "תאשור",
     "council": "בני שמעון"
   },
   {
-    "score": 1214,
+    "score": 3,
     "name": "טפחות",
     "council": "מרום הגליל"
   },
   {
-    "score": 103,
+    "score": 4,
     "name": "תל עדשים",
     "council": "עמק יזרעאל"
   },
   {
-    "score": 5000,
-    "name": "תל אביב - יפו",
+    "score": 1,
+    "name": "תל אביב",
     "council": ""
   },
   {
-    "score": 154,
+    "score": 3,
     "name": "תל מונד",
     "council": ""
   },
   {
-    "score": 719,
+    "score": 3,
     "name": "תל קציר",
     "council": "עמק הירדן"
   },
   {
-    "score": 1054,
-    "name": "תל שבע",
-    "council": ""
-  },
-  {
-    "score": 1283,
+    "score": 3,
     "name": "תל תאומים",
     "council": "עמק המעיינות"
   },
   {
-    "score": 3815,
+    "score": 3,
     "name": "תל ציון",
     "council": "מטה בנימין"
   },
   {
-    "score": 287,
+    "score": 3,
     "name": "תל יצחק",
     "council": "חוף השרון"
   },
   {
-    "score": 84,
+    "score": 3,
     "name": "תל יוסף",
     "council": "הגלבוע"
   },
   {
-    "score": 1177,
+    "score": 3,
     "name": "טללים",
     "council": "רמת נגב"
   },
   {
-    "score": 814,
+    "score": 3,
     "name": "תלמים",
     "council": "לכיש"
   },
   {
-    "score": 3719,
+    "score": 3,
     "name": "תלם",
     "council": "הר חברון"
   },
   {
-    "score": 3743,
+    "score": 3,
     "name": "טנא",
     "council": "הר חברון"
   },
   {
-    "score": 2002,
+    "score": 3,
     "name": "תנובות",
     "council": "לב השרון"
   },
   {
-    "score": 3563,
+    "score": 2,
     "name": "תקוע",
     "council": "גוש עציון"
   },
   {
-    "score": 665,
+    "score": 3,
     "name": "תקומה",
     "council": "שדות נגב"
   },
   {
-    "score": 6700,
+    "score": 1,
     "name": "טבריה",
     "council": ""
   },
   {
-    "score": 2061,
+    "score": 4,
     "name": "תדהר",
     "council": "בני שמעון"
   },
   {
-    "score": 709,
+    "score": 4,
     "name": "תפרח",
     "council": "מרחבים"
   },
   {
-    "score": 163,
+    "score": 4,
     "name": "תימורים",
     "council": "באר טוביה"
   },
   {
-    "score": 1244,
+    "score": 4,
     "name": "תמרת",
     "council": "עמק יזרעאל"
   },
   {
-    "score": 2100,
+    "score": 3,
     "name": "טירת כרמל",
     "council": ""
   },
   {
-    "score": 663,
+    "score": 4,
     "name": "טירת יהודה",
     "council": "חבל מודיעין"
   },
   {
-    "score": 268,
+    "score": 2,
     "name": "טירת צבי",
     "council": "עמק המעיינות"
   },
   {
-    "score": 2720,
-    "name": "טירה",
-    "council": ""
-  },
-  {
-    "score": 10,
+    "score": 3,
     "name": "תירוש",
     "council": "מטה יהודה"
   },
   {
-    "score": 3558,
+    "score": 3,
     "name": "תומר",
     "council": "ערבות הירדן"
   },
   {
-    "score": 4029,
+    "score": 3,
     "name": "רמת טראמפ",
     "council": "גולן"
   },
   {
-    "score": 962,
-    "name": "טובא-זנגריה",
-    "council": ""
-  },
-  {
-    "score": 498,
-    "name": "טורעאן",
-    "council": ""
-  },
-  {
-    "score": 1083,
+    "score": 4,
     "name": "תושיה",
     "council": "שדות נגב"
   },
   {
-    "score": 1172,
+    "score": 4,
     "name": "תובל",
     "council": "משגב"
   },
   {
-    "score": 446,
+    "score": 4,
     "name": "אודים",
     "council": "חוף השרון"
   },
   {
-    "score": 2710,
-    "name": "אום אל-פחם",
-    "council": ""
-  },
-  {
-    "score": 2024,
-    "name": "אום אל-קוטוף",
-    "council": "מנשה"
-  },
-  {
-    "score": 1358,
-    "name": "אום בטין",
-    "council": "אל קסום"
-  },
-  {
-    "score": 957,
-    "name": "עוקבי (בנו עוקבה)",
-    "council": ""
-  },
-  {
-    "score": 403,
+    "score": 3,
     "name": "אורים",
     "council": "אשכול"
   },
   {
-    "score": 278,
+    "score": 4,
     "name": "אושה",
     "council": "זבולון"
   },
   {
-    "score": 826,
+    "score": 4,
     "name": "עוזה",
     "council": "שפיר"
   },
   {
-    "score": 528,
-    "name": "עוזייר",
-    "council": "אל-בטוף"
-  },
-  {
-    "score": 1133,
+    "score": 3,
     "name": "ורדון",
     "council": "יואב"
   },
   {
-    "score": 3639,
+    "score": 2,
     "name": "ורד יריחו",
     "council": "מגילות ים המלח"
   },
   {
-    "score": 1138,
+    "score": 3,
     "name": "יעד",
     "council": "משגב"
   },
   {
-    "score": 795,
+    "score": 3,
     "name": "יערה",
     "council": "מעלה יוסף"
   },
   {
-    "score": 1117,
+    "score": 3,
     "name": "יעל",
     "council": "הגלבוע"
   },
   {
-    "score": 577,
+    "score": 2,
     "name": "יד בנימין",
     "council": "נחל שורק"
   },
   {
-    "score": 758,
+    "score": 4,
     "name": "יד חנה",
     "council": "עמק חפר"
   },
   {
-    "score": 1134,
+    "score": 4,
     "name": "יד השמונה",
     "council": "מטה יהודה"
   },
   {
-    "score": 358,
+    "score": 3,
     "name": "יד מרדכי",
     "council": "חוף אשקלון"
   },
   {
-    "score": 775,
+    "score": 4,
     "name": "יד נתן",
     "council": "לכיש"
   },
   {
-    "score": 64,
-    "name": "יד רמב\"ם",
+    "score": 4,
+    "name": "יד רמבם",
     "council": "גזר"
   },
   {
-    "score": 499,
-    "name": "יפיע",
-    "council": ""
-  },
-  {
-    "score": 3566,
+    "score": 3,
     "name": "יפית",
     "council": "ערבות הירדן"
   },
   {
-    "score": 798,
+    "score": 3,
     "name": "יגל",
     "council": "שדות דן"
   },
   {
-    "score": 96,
+    "score": 3,
     "name": "יגור",
     "council": "זבולון"
   },
   {
-    "score": 1158,
+    "score": 3,
     "name": "יהל",
     "council": "חבל אילות"
   },
   {
-    "score": 811,
+    "score": 4,
     "name": "יכיני",
     "council": "שער הנגב"
   },
   {
-    "score": 1295,
-    "name": "יאנוח-ג'ת",
-    "council": ""
-  },
-  {
-    "score": 753,
+    "score": 4,
     "name": "ינוב",
     "council": "לב השרון"
   },
   {
-    "score": 3647,
+    "score": 3,
     "name": "יקיר",
     "council": "שומרון"
   },
   {
-    "score": 417,
+    "score": 3,
     "name": "יקום",
     "council": "חוף השרון"
   },
   {
-    "score": 2026,
+    "score": 3,
     "name": "ירדנה",
     "council": "עמק המעיינות"
   },
   {
-    "score": 718,
+    "score": 4,
     "name": "ירחיב",
     "council": "דרום השרון"
   },
   {
-    "score": 183,
+    "score": 3,
     "name": "ירקונה",
     "council": "דרום השרון"
   },
   {
-    "score": 575,
+    "score": 3,
     "name": "יסעור",
     "council": "מטה אשר"
   },
   {
-    "score": 828,
+    "score": 4,
     "name": "ישרש",
     "council": "גזר"
   },
   {
-    "score": 1227,
+    "score": 3,
     "name": "יתד",
     "council": "אשכול"
   },
   {
-    "score": 2660,
+    "score": 1,
     "name": "יבנה",
     "council": ""
   },
   {
-    "score": 46,
+    "score": 3,
     "name": "יבנאל",
     "council": ""
   },
   {
-    "score": 759,
+    "score": 4,
     "name": "יציץ",
     "council": "גזר"
   },
   {
-    "score": 1044,
+    "score": 4,
     "name": "יעף",
     "council": "לב השרון"
   },
   {
-    "score": 1144,
+    "score": 4,
     "name": "ידידה",
     "council": "מטה יהודה"
   },
   {
-    "score": 233,
+    "score": 4,
     "name": "כפר ידידיה",
     "council": "עמק חפר"
   },
   {
-    "score": 409,
+    "score": 4,
     "name": "יחיעם",
     "council": "מטה אשר"
   },
   {
-    "score": 9400,
-    "name": "יהוד-מונוסון",
+    "score": 2,
+    "name": "יהוד",
     "council": ""
   },
   {
-    "score": 831,
+    "score": 1,
     "name": "ירוחם",
     "council": ""
   },
   {
-    "score": 916,
+    "score": 3,
     "name": "ישע",
     "council": "אשכול"
   },
   {
-    "score": 440,
+    "score": 3,
     "name": "יסודות",
     "council": "נחל שורק"
   },
   {
-    "score": 29,
+    "score": 3,
     "name": "יסוד המעלה",
     "council": ""
   },
   {
-    "score": 1232,
+    "score": 4,
     "name": "יבול",
     "council": "אשכול"
   },
   {
-    "score": 134,
+    "score": 3,
     "name": "יפעת",
     "council": "עמק יזרעאל"
   },
   {
-    "score": 453,
+    "score": 3,
     "name": "יפתח",
     "council": "הגליל העליון"
   },
   {
-    "score": 2011,
+    "score": 3,
     "name": "ינון",
     "council": "באר טוביה"
   },
   {
-    "score": 623,
+    "score": 4,
     "name": "יראון",
     "council": "הגליל העליון"
   },
   {
-    "score": 502,
-    "name": "ירכא",
-    "council": ""
-  },
-  {
-    "score": 805,
+    "score": 2,
     "name": "ישעי",
     "council": "מטה יהודה"
   },
   {
-    "score": 3607,
-    "name": "ייט\"ב",
+    "score": 4,
+    "name": "ייטב",
     "council": "ערבות הירדן"
   },
   {
-    "score": 3749,
+    "score": 2,
     "name": "יצהר",
     "council": "שומרון"
   },
   {
-    "score": 452,
+    "score": 3,
     "name": "יזרעאל",
     "council": "הגלבוע"
   },
   {
-    "score": 1112,
+    "score": 3,
     "name": "יודפת",
     "council": "משגב"
   },
   {
-    "score": 4007,
+    "score": 2,
     "name": "יונתן",
     "council": "גולן"
   },
   {
-    "score": 240,
-    "name": "יקנעם עילית",
-    "council": ""
-  },
-  {
-    "score": 241,
-    "name": "יקנעם (מושבה)",
+    "score": 2,
+    "name": "יקנעם",
     "council": "מגידו"
   },
   {
-    "score": 803,
+    "score": 4,
     "name": "יושיביה",
     "council": "שדות נגב"
   },
   {
-    "score": 866,
+    "score": 3,
     "name": "יטבתה",
     "council": "חבל אילות"
   },
   {
-    "score": 2009,
+    "score": 3,
     "name": "יובל",
     "council": "מבואות החרמון"
   },
   {
-    "score": 1226,
+    "score": 3,
     "name": "יובלים",
     "council": "משגב"
   },
   {
-    "score": "",
-    "name": "",
-    "council": ""
-  },
-  {
-    "score": 594,
+    "score": 3,
     "name": "צפריה",
     "council": "שדות דן"
   },
   {
-    "score": 816,
+    "score": 2,
     "name": "זנוח",
     "council": "מטה יהודה"
   },
   {
-    "score": 975,
-    "name": "זרזיר",
-    "council": ""
-  },
-  {
-    "score": 815,
+    "score": 4,
     "name": "זבדיאל",
     "council": "שפיר"
   },
   {
-    "score": 413,
+    "score": 2,
     "name": "צאלים",
     "council": "אשכול"
   },
   {
-    "score": 8000,
+    "score": 1,
     "name": "צפת",
     "council": ""
   },
   {
-    "score": 799,
+    "score": 3,
     "name": "זכריה",
     "council": "מטה יהודה"
   },
   {
-    "score": 796,
+    "score": 4,
     "name": "צלפון",
     "council": "מטה יהודה"
   },
   {
-    "score": 1290,
-    "name": "זמר",
-    "council": ""
-  },
-  {
-    "score": 818,
+    "score": 4,
     "name": "זרחיה",
     "council": "שפיר"
   },
   {
-    "score": 2064,
+    "score": 3,
     "name": "זרועה",
     "council": "שדות נגב"
   },
   {
-    "score": 612,
+    "score": 4,
     "name": "צרופה",
     "council": "חוף הכרמל"
   },
   {
-    "score": 788,
+    "score": 4,
     "name": "זיתן",
     "council": "שדות דן"
   },
   {
-    "score": 9300,
+    "score": 1,
     "name": "זכרון יעקב",
     "council": ""
   },
   {
-    "score": 1065,
+    "score": 3,
     "name": "זמרת",
     "council": "שדות נגב"
   },
   {
-    "score": 613,
+    "score": 3,
     "name": "ציפורי",
     "council": "עמק יזרעאל"
   },
   {
-    "score": 584,
+    "score": 2,
     "name": "זיקים",
     "council": "חוף אשקלון"
   },
   {
-    "score": 1213,
+    "score": 4,
     "name": "צבעון",
     "council": "הגליל העליון"
   },
   {
-    "score": 1150,
+    "score": 4,
     "name": "צופר",
     "council": "הערבה התיכונה"
   },
   {
-    "score": 198,
+    "score": 3,
     "name": "צופית",
     "council": "דרום השרון"
   },
   {
-    "score": 1111,
+    "score": 3,
     "name": "צופיה",
     "council": "חבל יבנה"
   },
   {
-    "score": 1136,
+    "score": 4,
     "name": "צוחר",
     "council": "אשכול"
   },
   {
-    "score": 44,
+    "score": 3,
     "name": "זוהר",
     "council": "לכיש"
   },
   {
-    "score": 567,
+    "score": 2,
     "name": "צרעה",
     "council": "מטה יהודה"
   },
   {
-    "score": 465,
+    "score": 2,
     "name": "צובה",
     "council": "מטה יהודה"
   },
   {
-    "score": 3791,
+    "score": 2,
     "name": "צופים",
     "council": "שומרון"
   },
   {
-    "score": 1113,
+    "score": 2,
     "name": "צור הדסה",
     "council": ""
   },
   {
-    "score": 276,
+    "score": 4,
     "name": "צור משה",
     "council": "לב השרון"
   },
   {
-    "score": 1148,
+    "score": 4,
     "name": "צור נתן",
     "council": "דרום השרון"
   },
   {
-    "score": 1345,
+    "score": 4,
     "name": "צור יצחק",
     "council": "דרום השרון"
   },
   {
-    "score": 774,
+    "score": 3,
     "name": "צוריאל",
     "council": "מעלה יוסף"
   },
   {
-    "score": 1221,
+    "score": 3,
     "name": "צורית",
     "council": "משגב"
   },
   {
-    "score": 1180,
+    "score": 3,
     "name": "צביה",
     "council": "משגב"
   }
