@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 // שינוי: מייבאים את שני הנתונים מהקונטקסט - trie ו-settlements
 import { useTrie } from "../contexts/TrieProvider";
 // ייבא את הפונקציות החדשות שנוספו ל-trie.js
-import { getNodeForPrefix, getRandomWordFromNode } from "../game/trie";
+import { getNodeForPrefix, getRandomWordFromNode, findNextNode, getActualChar } from "../game/trie";
 
 
 function GameLogic() {
@@ -149,76 +149,82 @@ function GameLogic() {
   };
 
   const handleSubmitLetter = () => {
-    if (!isPlayerTurn || !isGameActive) {
-      return;
-    }
+  if (!isPlayerTurn || !isGameActive) {
+    return;
+  }
 
-    if (currentGuess.length === 1 && trie && currentTrieNode && settlements) {
-      const char = currentGuess;
+  if (currentGuess.length === 1 && trie && currentTrieNode && settlements) {
+    const inputChar = currentGuess;
 
-      const isCurrentNodeEndOfWord = currentTrieNode.isEndOfWord;
-      const nextNode = currentTrieNode[char]; 
-      const canContinuePath = !!nextNode;
+    const isCurrentNodeEndOfWord = currentTrieNode.isEndOfWord;
+    
+    // שינוי: השתמש בפונקציה החדשה
+    const nextNode = findNextNode(currentTrieNode, inputChar);
+    const actualChar = getActualChar(currentTrieNode, inputChar);
+    const canContinuePath = !!nextNode;
 
-      if (canContinuePath) {
-        const newGuessedLetters = guessedLetters + char;
-        setGuessedLetters(newGuessedLetters);
-        setCurrentTrieNode(nextNode);
-        setDisplayMessage("...הזן את האות הבאה");
-        setDisplayAlertMessage("");
+    if (canContinuePath && actualChar) {
+      // שינוי: השתמש באות האמיתית שנמצאה בעץ
+      const newGuessedLetters = guessedLetters + actualChar;
+      setGuessedLetters(newGuessedLetters);
+      setCurrentTrieNode(nextNode);
+      setDisplayMessage("...הזן את האות הבאה");
+      setDisplayAlertMessage("");
 
-        if (nextNode.isEndOfWord) {
-            // מציאת הניקוד של היישוב והוספתו
-            const settlement = settlements.find(s => s.name.replace(/\s+/g, '') === newGuessedLetters);
-            if (settlement) {
-              setCurrentScore(prevScore => prevScore + settlement.score);
-            }
-            
-            setDisplayAlertMessage(`המילה "${newGuessedLetters}" הושלמה! תור המחשב.`);
-            setIsPlayerTurn(false);
-        } else {
-            setIsPlayerTurn(false); 
+      if (nextNode.isEndOfWord) {
+        // מציאת הניקוד של היישוב והוספתו
+        const settlement = settlements.find(s => s.name.replace(/\s+/g, '') === newGuessedLetters);
+        if (settlement) {
+          setCurrentScore(prevScore => prevScore + settlement.score);
         }
-
+        
+        setDisplayAlertMessage(`המילה "${newGuessedLetters}" הושלמה! תור המחשב.`);
+        setIsPlayerTurn(false);
       } else {
-        const charExistsAsRootChild = trie[char];
-
-        if (isCurrentNodeEndOfWord && charExistsAsRootChild) {
-          setCurrentTrieNode(trie[char]); 
-          setGuessedLetters(char);
-          setDisplayMessage(`מילה חדשה התחילה: '${char}'. תור המחשב...`);
-          setDisplayAlertMessage("");
-          setIsPlayerTurn(false);
-        } else {
-          const suggestedWord = getRandomWordFromNode(currentTrieNode, guessedLetters); 
-
-          let message = `יצאת בור!`;
-          if (suggestedWord) {
-              message += ` העיר שאני חשבתי עליה היא ${suggestedWord}`;
-          } else {
-              message += ` לא מצאתי מילה שהתחילה בקידומת "${guessedLetters}" במצב זה.`;
-          }
-          
-          setDisplayAlertMessage(message); 
-
-          setCurrentTrieNode(trie); 
-          setGuessedLetters(""); 
-          setCurrentGuess("");
-          setIsPlayerTurn(true); 
-          setDisplayMessage("...הזן אות ראשונה"); 
-        }
+        setIsPlayerTurn(false); 
       }
-      setCurrentGuess("");
-    } else if (currentGuess.length === 0) {
-      setDisplayAlertMessage("נא להזין אות");
-    } else {
-      setDisplayAlertMessage("שגיאה: נתוני המשחק לא נטענו כראוי או קלט שגוי.");
-    }
 
-    if (inputRef.current) {
-      inputRef.current.focus();
+    } else {
+      // שינוי: גם כאן השתמש בפונקציה החדשה לבדיקת תחילת מילה חדשה
+      const newWordNode = findNextNode(trie, inputChar);
+      const newWordActualChar = getActualChar(trie, inputChar);
+
+      if (isCurrentNodeEndOfWord && newWordNode && newWordActualChar) {
+        setCurrentTrieNode(newWordNode); 
+        setGuessedLetters(newWordActualChar); // השתמש באות האמיתית
+        setDisplayMessage(`מילה חדשה התחילה: '${newWordActualChar}'. תור המחשב...`);
+        setDisplayAlertMessage("");
+        setIsPlayerTurn(false);
+      } else {
+        const suggestedWord = getRandomWordFromNode(currentTrieNode, guessedLetters); 
+
+        let message = `יצאת בור!`;
+        if (suggestedWord) {
+            message += ` העיר שאני חשבתי עליה היא ${suggestedWord}`;
+        } else {
+            message += ` לא מצאתי מילה שהתחילה בקידומת "${guessedLetters}" במצב זה.`;
+        }
+        
+        setDisplayAlertMessage(message); 
+
+        setCurrentTrieNode(trie); 
+        setGuessedLetters(""); 
+        setCurrentGuess("");
+        setIsPlayerTurn(true); 
+        setDisplayMessage("...הזן אות ראשונה"); 
+      }
     }
-  };
+    setCurrentGuess("");
+  } else if (currentGuess.length === 0) {
+    setDisplayAlertMessage("נא להזין אות");
+  } else {
+    setDisplayAlertMessage("שגיאה: נתוני המשחק לא נטענו כראוי או קלט שגוי.");
+  }
+
+  if (inputRef.current) {
+    inputRef.current.focus();
+  }
+};
 
 
   const handleKeyDown = (event) => {
