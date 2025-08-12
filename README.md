@@ -41,3 +41,10 @@ To run the project on your local machine, follow these steps:
     ```
 
     This command will open the application in development mode, and you can access it through your browser at the local address.
+
+-----
+
+### **Developed By**
+
+  * Eliyahu Yadegari
+  * Gilad Abudi
