@@ -1,9 +1,7 @@
 // src/pages/gameLogic.jsx
 
 import { useState, useEffect, useRef } from "react";
-// שינוי: מייבאים את שני הנתונים מהקונטקסט - trie ו-settlements
 import { useTrie } from "../contexts/TrieProvider";
-// ייבא את הפונקציות החדשות שנוספו ל-trie.js
 import { getNodeForPrefix, getRandomWordFromNode, findNextNode, getActualChar } from "../game/trie";
 
 
