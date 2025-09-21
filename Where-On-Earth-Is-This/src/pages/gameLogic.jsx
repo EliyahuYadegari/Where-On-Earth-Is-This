@@ -1,7 +1,9 @@
-// src/pages/gamePage.jsx
+// src/pages/gameLogic.jsx
 
 import { useState, useEffect, useRef } from "react";
 import { useTrie } from "../contexts/TrieProvider";
+import { getNodeForPrefix, getRandomWordFromNode, findNextNode, getActualChar } from "../game/trie";
+
 
 function GameLogic() {
   const [guessedLetters, setGuessedLetters] = useState("");
@@ -9,108 +11,114 @@ function GameLogic() {
   const [displayAlertMessage, setDisplayAlertMessage] = useState("");
   const [currentGuess, setCurrentGuess] = useState("");
 
-  const [currentTrieNode, setCurrentTrieNode] = useState(null); // נתחיל עם null ונאתחל ב-useEffect
+  const [currentTrieNode, setCurrentTrieNode] = useState(null); 
+  const [currentScore, setCurrentScore] = useState(0); // מצב חדש לניקוד הנוכחי
 
-  const trie = useTrie();
-  const inputRef = useRef(null); // זהו ה-ref שיתייחס לתיבת הקלט
+  // שינוי: שימוש ב-Hook כדי לקבל גם את ה-Trie וגם את נתוני היישובים
+  const { trie, settlements } = useTrie(); 
+  const inputRef = useRef(null);
 
-  const [isPlayerTurn, setIsPlayerTurn] = useState(true); // האם זה תור השחקן?
-  const [isGameActive, setIsGameActive] = useState(false); // האם המשחק פעיל?
+  const [isPlayerTurn, setIsPlayerTurn] = useState(true);
+  const [isGameActive, setIsGameActive] = useState(false);
 
-  // פעולות שאפשר לעשות עם הtrie
-
-  // המצביע לשורש של העץ
-  // let currentNode = trie.root;
-  // console.log(currentNode);
-  // const char = 'ב'; // נניח שאנחנו מחפשים את האות ב'
-  // // מעבר לבן
-  // if (currentNode.children[char]) { // ודא שהבן קיים
-  //     currentNode = currentNode.children[char]; // עברנו לצומת של 'ב'
-  // } else {
-  //     // האות 'ב' אינה המשך חוקי מהצומת הנוכחי
-  //     // לדוגמה, אין מילים שמתחילות בקידומת הנוכחית עם האות 'ב' אחריה
-  //     console.log(`אין ילד לאות '${char}'`);
-  //     // כאן תוכל לטפל במצב שבו אין המשך חוקי
-  // }
-  // // זיהוי של עלה
-  // if (Object.keys(currentNode.children).length === 0) {
-  //     console.log("הצומת הנוכחי הוא עלה (אין לו ילדים).");
-  //     // זה אומר שהקידומת שהגענו אליה היא מקסימלית מבחינת המשך ב-Trie.
-  //     // אם גם isEndOfWord הוא true, אז זו מילה סופית בלקסיקון.
-  // }
-  // //  לזהות שצומת מסוים הוא סוף מילה
-  // if (currentNode.isEndOfWord) {
-  //     console.log("הקידומת שמסתיימת בצומת זה היא מילה חוקית בפני עצמה.");
-  // }
-
+  // useEffect לטעינת Trie ולאתחול מצב התחלתי
   useEffect(() => {
-    if (trie) {
-      console.log("GamePage.jsx: ה-Trie זמין ב-GamePage דרך useTrie:", trie);
-      setCurrentTrieNode(trie); // מאתחל את הצומת הנוכחי לשורש ה-Trie
-      setIsPlayerTurn(true); // וודא שהתור הראשון הוא של השחקן
-      setIsGameActive(true); // הפעל את המשחק
+    if (trie && settlements) { // ודא שגם ה-trie וגם ה-settlements זמינים
+      console.log("GameLogic.jsx: ה-Trie זמין ב-GameLogic דרך useTrie:", trie);
+      // תיקון: trie עצמו הוא השורש במבנה שלך
+      setCurrentTrieNode(trie); 
+      setIsPlayerTurn(true);
+      setIsGameActive(true);
+      setDisplayMessage("המשחק מוכן! תורך. הזן אות ראשונה.");
     } else {
-      console.log("GamePage.jsx: ממתין ל-Trie דרך useTrie...");
+      console.log("GameLogic.jsx: ממתין ל-Trie דרך useTrie...");
       setDisplayMessage("...טוען נתוני משחק");
-      setIsGameActive(false); // המשחק לא פעיל עד שה-Trie נטען
+      setIsGameActive(false);
     }
-  }, [trie]);
+  }, [trie, settlements]); // הוספת settlements כתלות
 
+  // useEffect לטיפול בתור המחשב
   useEffect(() => {
     const handleComputerTurn = async () => {
-      // ודא שזה תור המחשב, שהמשחק פעיל ושה-Trie והצומת הנוכחי זמינים
-      if (!isPlayerTurn && isGameActive && currentTrieNode && trie) {
+      if (!isPlayerTurn && isGameActive && currentTrieNode && trie && settlements) {
         setDisplayMessage("...תור המחשב");
-        setDisplayAlertMessage(""); // נקה הודעות קודמות
+        setDisplayAlertMessage("");
 
-        // ניתן להוסיף השהיה קצרה (לדוגמה, שנייה) כדי לדמות "חשיבה" של המחשב
-        await new Promise((resolve) => setTimeout(resolve, 1000)); // השהיה של 1.5 שניה
+        await new Promise((resolve) => setTimeout(resolve, 1500));
 
-        const computerMove = chooseComputerMove(currentTrieNode, trie); // השתמש בפונקציה החדשה
+        const computerMove = chooseComputerMove(currentTrieNode, trie);
 
         if (computerMove) {
           const { char, action } = computerMove;
 
           if (action === "continue") {
-            // המחשב ממשיך את המילה הנוכחית
+            const nextNode = currentTrieNode[char]; 
             const newGuessedLetters = guessedLetters + char;
             setGuessedLetters(newGuessedLetters);
-            setCurrentTrieNode(currentTrieNode[char]); // עדכן את הצומת
-            setDisplayMessage(`המחשב בחר: ${char}`);
-            setDisplayMessage(
-              `המחשב בחר: <span style="color: red;">${char}</span>`
-            );
+            setCurrentTrieNode(nextNode); 
+            
+            if (nextNode.isEndOfWord) {
+                // מציאת הניקוד של היישוב והוספתו
+                const settlement = settlements.find(s => s.name.replace(/\s+/g, '') === newGuessedLetters);
+                if (settlement) {
+                  setCurrentScore(prevScore => prevScore + settlement.score);
+                }
+
+                setDisplayAlertMessage(`המחשב השלים את המילה: "${newGuessedLetters}"! מתחילים מילה חדשה.`); 
+                setGuessedLetters(""); 
+                setCurrentTrieNode(trie); 
+                setIsPlayerTurn(true); 
+                setDisplayMessage("...הזן אות ראשונה למילה חדשה"); 
+
+            } else {
+                setDisplayMessage(`המחשב בחר: <span style="color: red;">${char}</span>. תורך.`); 
+                setIsPlayerTurn(true); 
+            }
+
           } else if (action === "new_word") {
-            // המחשב מתחיל מילה חדשה
-            const newGuessedLetters = guessedLetters + char;
+            const nextNode = trie[char]; 
+            const newGuessedLetters = char;
             setGuessedLetters(newGuessedLetters);
-            setCurrentTrieNode(trie[char]); // התקדמות לצומת של האות הראשונה של המילה החדשה
+            setCurrentTrieNode(nextNode); 
+            
+            if (nextNode.isEndOfWord) {
+                // מציאת הניקוד של היישוב והוספתו
+                const settlement = settlements.find(s => s.name.replace(/\s+/g, '') === newGuessedLetters);
+                if (settlement) {
+                  setCurrentScore(prevScore => prevScore + settlement.score);
+                }
+                
+                setDisplayAlertMessage(`המחשב השלים את המילה: "${newGuessedLetters}"! מתחילים מילה חדשה.`); 
+                setGuessedLetters(""); 
+                setCurrentTrieNode(trie); 
+                setIsPlayerTurn(true); 
+                setDisplayMessage("...הזן אות ראשונה למילה חדשה"); 
+            } else {
+                setDisplayMessage(`המחשב התחיל מילה חדשה עם: <span style="color: red;">${char}</span>. תורך.`); 
+                setIsPlayerTurn(true); 
+            }
           }
 
-          setIsPlayerTurn(true); // החזר את התור לשחקן
-          //if (inputRef.current) { inputRef.current.focus(); } // החזר פוקוס לשחקן
-
-          await new Promise((resolve) => setTimeout(resolve, 50)); // השהיה קצרה מאוד
+          await new Promise((resolve) => setTimeout(resolve, 50));
           if (inputRef.current) {
-            inputRef.current.focus(); // החזר פוקוס לשחקן
+            inputRef.current.focus();
           }
-          setCurrentGuess(""); // וודא ששדה הקלט ריק עבור השחקן
+          setCurrentGuess("");
         } else {
-          // המחשב לא מצא אות להמשיך או להתחיל (נגמרו האפשרויות)
           setDisplayAlertMessage(`המחשב נכנע! אין לו יותר מהלכים. ניצחת!`);
-          setIsGameActive(false); // סיים את המשחק
-          setCurrentTrieNode(trie); // אפס את ה-Trie לשורש
-          setGuessedLetters(""); // אפס אותיות
-          setIsPlayerTurn(false); // וודא שהמשחק נעצר
+          setIsGameActive(false);
+          setCurrentTrieNode(trie); 
+          setGuessedLetters("");
+          setIsPlayerTurn(true);
+          setDisplayMessage("לחץ שלח כדי להתחיל משחק חדש!");
         }
       }
     };
 
-    // הפעל את תור המחשב כאשר isPlayerTurn הופך ל-false
     if (!isPlayerTurn && isGameActive) {
       handleComputerTurn();
     }
-  }, [isPlayerTurn, isGameActive, currentTrieNode, guessedLetters, trie]); // הוסף את כל התלויות
+  }, [isPlayerTurn, isGameActive, currentTrieNode, guessedLetters, trie, settlements]);
 
   const handleInputChange = (event) => {
     const inputValue = event.target.value;
@@ -128,138 +136,94 @@ function GameLogic() {
 
     if (isHebrewLetter && !isFinalLetter) {
       setCurrentGuess(char);
-      // אם האות תקינה, נקה הודעת שגיאה קודמת
       setDisplayAlertMessage("");
     } else if (!isHebrewLetter) {
       setDisplayAlertMessage("נא להזין אות בעברית");
+      setCurrentGuess("");
     } else if (isFinalLetter) {
       setDisplayAlertMessage("נא להזין אות שאינה סופית");
+      setCurrentGuess("");
     }
   };
 
   const handleSubmitLetter = () => {
-    if (!isPlayerTurn || !isGameActive) {
-      // אם לא תור השחקן או שהמשחק לא פעיל, אל תעשה כלום
-      return;
-    }
+  if (!isPlayerTurn || !isGameActive) {
+    return;
+  }
 
-    if (currentGuess.length === 1 && trie && currentTrieNode) {
-      const char = currentGuess;
+  if (currentGuess.length === 1 && trie && currentTrieNode && settlements) {
+    const inputChar = currentGuess;
 
-      const isCurrentNodeEndOfWord = !!currentTrieNode.isEndOfWord; // האם זה סוף מילה?
-      const nextNode = currentTrieNode[char]; // מה האות הבאה במידה וקיימת?
-      const canContinuePath = !!nextNode; //האם יש אות הבאה?
+    const isCurrentNodeEndOfWord = currentTrieNode.isEndOfWord;
+    
+    // שינוי: השתמש בפונקציה החדשה
+    const nextNode = findNextNode(currentTrieNode, inputChar);
+    const actualChar = getActualChar(currentTrieNode, inputChar);
+    const canContinuePath = !!nextNode;
 
-      if (canContinuePath) {
-        const newGuessedLetters = guessedLetters + char;
-        setGuessedLetters(newGuessedLetters);
-        setCurrentTrieNode(nextNode);
-        //setDisplayMessage("...הזן את האות הבאה");
-        setDisplayAlertMessage("");
+    if (canContinuePath && actualChar) {
+      // שינוי: השתמש באות האמיתית שנמצאה בעץ
+      const newGuessedLetters = guessedLetters + actualChar;
+      setGuessedLetters(newGuessedLetters);
+      setCurrentTrieNode(nextNode);
+      setDisplayMessage("...הזן את האות הבאה");
+      setDisplayAlertMessage("");
 
-        setIsPlayerTurn(false); // העבר תור למחשב
-        setCurrentGuess(""); // נקה קלט שחקן
-      } else {
-        const charExistsInRoot = !!trie[char]; // האם האות שהוזנה קיימת כילד של השורש?
-
-        if (isCurrentNodeEndOfWord && charExistsInRoot) {
-          // השחקן סיים מילה קודמת והתחיל חדשה
-          setCurrentTrieNode(trie[char]);
-          const newGuessedLetters = guessedLetters + char;
-          setGuessedLetters(newGuessedLetters); //
-          //setDisplayMessage(`המילה "${guessedLetters}" הסתיימה. התחלת מילה חדשה: '${char}'. תור המחשב...`);
-          setDisplayAlertMessage("");
-          setIsPlayerTurn(false); // העבר תור למחשב
-          setCurrentGuess("");
-        } else {
-          // מהלך שגוי של השחקן - איפוס
-          setDisplayMessage(
-            `<span style="color: blue;">איזה לוזרררר. התחל מחדש</span>`
-          );
-          setCurrentTrieNode(trie); // אפס לשורש
-          setGuessedLetters(""); // אפס מילה
-          setCurrentGuess("");
-          // התור נשאר אצל השחקן להתחיל מחדש
-          //setDisplayMessage("...הזן אות ראשונה");
-          setDisplayAlertMessage("");
+      if (nextNode.isEndOfWord) {
+        // מציאת הניקוד של היישוב והוספתו
+        const settlement = settlements.find(s => s.name.replace(/\s+/g, '') === newGuessedLetters);
+        if (settlement) {
+          setCurrentScore(prevScore => prevScore + settlement.score);
         }
-      }
-    } else if (currentGuess.length === 0) {
-      setDisplayAlertMessage("נא להזין אות");
-      setCurrentGuess("");
-    } else {
-      setDisplayAlertMessage("שגיאה: נתוני המשחק לא נטענו כראוי או קלט שגוי.");
-      setCurrentGuess("");
-    }
-
-    if (inputRef.current) {
-      inputRef.current.focus();
-    }
-  };
-
-  /*
-  const handleSubmitLetter = () => {
-    if (currentGuess.length === 1 && trie && currentTrieNode) {
-      const char = currentGuess;
-
-      // 1. נבדוק קודם כל אם הצומת הנוכחי (לפני הוספת התו) מסמן סוף מילה
-      const isCurrentNodeEndOfWord = !!currentTrieNode.isEndOfWord;
-
-      // 2. ננסה להתקדם עם התו שהוזן
-      const nextNode = currentTrieNode[char];
-      const canContinuePath = !!nextNode; // האם התו הזה ממשיך את הקידומת הנוכחית?
-
-      if (canContinuePath) {
-        // המקרה הנפוץ: האות ממשיכה את המילה הנוכחית
-        const newGuessedLetters = guessedLetters + char;
-        setGuessedLetters(newGuessedLetters);
-        setCurrentTrieNode(nextNode); // מתקדמים לצומת הבא
-        setDisplayMessage("...הזן את האות הבאה");
-        setDisplayAlertMessage("");
-
-        // אם הצומת הבא (החדש) הוא סוף מילה, ניתן להציג הודעה מיוחדת
-        if (nextNode.isEndOfWord) {
-            setDisplayMessage("...הזן את האות הבאה");
-        }
-
-      } else {
-        // המקרה השני: האות לא ממשיכה את המילה הנוכחית
-        // כאן נבדוק אם אולי המשתמש סיים מילה חוקית (isEndOfWord) ופשוט רצה להתחיל חדשה עם התו הנוכחי
-        // או שזה פשוט תו לא נכון שצריך לאפס
         
-        const charExistsInRoot = !!trie[char]; // האם האות יכולה להתחיל מילה חדשה?
-
-        if (isCurrentNodeEndOfWord && charExistsInRoot) {
-            // המילה הקודמת הושלמה, והתו החדש יכול להתחיל מילה חדשה.
-            // נאפס את currentTrieNode לשורש, ונתחיל מילה חדשה.
-            setCurrentTrieNode(trie[char]); // מתחילים מהצומת של האות החדשה בשורש
-            const newGuessedLetters = guessedLetters + char;
-            setGuessedLetters(newGuessedLetters);            setDisplayMessage("...הזן את האות הבאה");
-            setDisplayAlertMessage("");
-        } else {
-            // האות לא ממשיכה את המילה הנוכחית, וגם לא יכולה להתחיל מילה חדשה (או שהמילה הקודמת לא הושלמה)
-            // זהו מצב של טעות - נאפס הכל
-            setDisplayAlertMessage("איזה לוזרררר. התחל מחדש");
-            setCurrentTrieNode(trie); // אפס לשורש
-            setGuessedLetters(""); // אפס את המילה שניחשו
-            // setCurrentGuess('') is handled below
-        }
+        setDisplayAlertMessage(`המילה "${newGuessedLetters}" הושלמה! תור המחשב.`);
+        setIsPlayerTurn(false);
+      } else {
+        setIsPlayerTurn(false); 
       }
-      
-      setCurrentGuess(""); // מאפסים את שדה הקלט
-    } else if (currentGuess.length === 0) {
-      setDisplayAlertMessage("נא להזין אות");
-      setCurrentGuess(""); // וודא שקלט ריק
-    } else {
-      setDisplayAlertMessage("שגיאה: נתוני המשחק לא נטענו כראוי או קלט שגוי.");
-      setCurrentGuess("");
-    }
 
-    if (inputRef.current) {
-      inputRef.current.focus();
+    } else {
+      // שינוי: גם כאן השתמש בפונקציה החדשה לבדיקת תחילת מילה חדשה
+      const newWordNode = findNextNode(trie, inputChar);
+      const newWordActualChar = getActualChar(trie, inputChar);
+
+      if (isCurrentNodeEndOfWord && newWordNode && newWordActualChar) {
+        setCurrentTrieNode(newWordNode); 
+        setGuessedLetters(newWordActualChar); // השתמש באות האמיתית
+        setDisplayMessage(`מילה חדשה התחילה: '${newWordActualChar}'. תור המחשב...`);
+        setDisplayAlertMessage("");
+        setIsPlayerTurn(false);
+      } else {
+        const suggestedWord = getRandomWordFromNode(currentTrieNode, guessedLetters); 
+
+        let message = `יצאת בור!`;
+        if (suggestedWord) {
+            message += ` העיר שאני חשבתי עליה היא ${suggestedWord}`;
+        } else {
+            message += ` לא מצאתי מילה שהתחילה בקידומת "${guessedLetters}" במצב זה.`;
+        }
+        
+        setDisplayAlertMessage(message); 
+
+        setCurrentTrieNode(trie); 
+        setGuessedLetters(""); 
+        setCurrentGuess("");
+        setIsPlayerTurn(true); 
+        setDisplayMessage("...הזן אות ראשונה"); 
+      }
     }
-  };
-*/
+    setCurrentGuess("");
+  } else if (currentGuess.length === 0) {
+    setDisplayAlertMessage("נא להזין אות");
+  } else {
+    setDisplayAlertMessage("שגיאה: נתוני המשחק לא נטענו כראוי או קלט שגוי.");
+  }
+
+  if (inputRef.current) {
+    inputRef.current.focus();
+  }
+};
+
 
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
@@ -268,42 +232,36 @@ function GameLogic() {
     }
   };
 
-  /**
-   * בוחר תו אקראי למחשב, או בוחר להתחיל מילה חדשה אם הצומת הנוכחי הוא סוף מילה.
-   *
-   * @param {Object} currentTrieNode - הצומת הנוכחי בעץ ה-Trie (ייתכן שזה שורש ה-Trie עצמו).
-   * @param {Object} trieRoot - שורש ה-Trie, כדי שהמחשב יוכל להתחיל מילה חדשה.
-   * @returns {Object|null} - אובייקט המכיל { char: string, action: 'continue' | 'new_word' } או null אם אין אפשרויות.
-   */
-  const chooseComputerMove = (currentTrieNode, trieRoot) => {
-    const possibleContinuations = Object.keys(currentTrieNode).filter(
-      (key) => key !== "isEndOfWord"
-    );
-    const isCurrentNodeEndOfWord = !!currentTrieNode.isEndOfWord; // האם כרגע זה סוף מילה?
+  const chooseComputerMove = (node, trieInstance) => {
+    if (!node) {
+      console.log("chooseComputerMove: node אינו קיים.");
+      return null;
+    }
+
+    const possibleContinuations = Object.keys(node).filter(key => key !== 'isEndOfWord');
+    const isCurrentNodeEndOfWord = !!node.isEndOfWord; 
 
     const choices = [];
 
-    // אפשרות 1: המחשב ממשיך את המילה הנוכחית
     possibleContinuations.forEach((char) => {
-      choices.push({ char, action: "continue" });
+      if (node[char]) { 
+        choices.push({ char, action: "continue" });
+      }
     });
 
-    // אפשרות 2: אם הצומת הנוכחי הוא סוף מילה, המחשב יכול לבחור להתחיל מילה חדשה
-    if (isCurrentNodeEndOfWord) {
-      // קבל את כל האותיות שיכולות להתחיל מילה חדשה מהשורש
-      const possibleNewWordStarts = Object.keys(trieRoot).filter(
-        (key) => key !== "isEndOfWord"
-      );
+    if (isCurrentNodeEndOfWord && trieInstance) { 
+      const possibleNewWordStarts = Object.keys(trieInstance).filter(key => key !== 'isEndOfWord');
       possibleNewWordStarts.forEach((char) => {
-        choices.push({ char, action: "new_word" });
+        if (trieInstance[char]) { 
+            choices.push({ char, action: "new_word" });
+        }
       });
     }
 
     if (choices.length === 0) {
-      return null; // אין אפשרויות למחשב
+      return null;
     }
 
-    // בחר מהלך אקראי מבין כל האפשרויות
     const randomIndex = Math.floor(Math.random() * choices.length);
     return choices[randomIndex];
   };
@@ -321,11 +279,15 @@ function GameLogic() {
         margin: "10px auto",
       }}
     >
+      {/* תצוגת הניקוד החדשה */}
+      <h2 style={{ color: "purple" }}>הניקוד שלך במשחק זה: {currentScore}</h2>
+      
       {guessedLetters.length > 0 && (
         <h2 style={{ color: "blue" }}>האותיות עד כה: {guessedLetters}</h2>
       )}
 
       <h3 dangerouslySetInnerHTML={{ __html: displayMessage }}></h3>
+      <h3 style={{ color: "red" }}> {displayAlertMessage} </h3>
 
       <h5> נא להכניס אות לא סופית בעברית בלבד*</h5>
       <input
@@ -336,22 +298,22 @@ function GameLogic() {
         maxLength="1"
         placeholder="הכנס אות אחת"
         ref={inputRef}
-        disabled={!isPlayerTurn || !isGameActive} // מנוטרל כשזה לא תור השחקן או שהמשחק לא פעיל
+        disabled={!isPlayerTurn || !isGameActive}
         style={{
           fontSize: "34px",
           width: "240px",
           height: "80px",
           textAlign: "center",
           margin: "4px 0",
-          backgroundColor: isPlayerTurn && isGameActive ? "#FFF" : "#EEE", // ויזואלית: אפור אם לא פעיל
+          backgroundColor: isPlayerTurn && isGameActive ? "#FFF" : "#EEE",
         }}
         dir="rtl"
       />
-      <h3 style={{ color: "red" }}> {displayAlertMessage} </h3>
+      
 
       <button
         onClick={handleSubmitLetter}
-        disabled={!isPlayerTurn || !isGameActive} // מנוטרל כשזה לא תור השחקן או שהמשחק לא פעיל
+        disabled={!isPlayerTurn || !isGameActive}
         style={{
           backgroundColor: "rgba(46, 165, 112, 0.5)",
           padding: "25px",

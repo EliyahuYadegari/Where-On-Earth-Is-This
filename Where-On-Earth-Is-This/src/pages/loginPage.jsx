@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react"; // הוסף את useState ו-useEffect אם הם לא שם
+import { useState, useEffect } from "react";
 import {
   auth,
   db,
@@ -158,10 +158,4 @@ const handleAnonymousSignIn = async () => {
 }
 
 export default LoginPage;
-
-
-
-
-
-
 

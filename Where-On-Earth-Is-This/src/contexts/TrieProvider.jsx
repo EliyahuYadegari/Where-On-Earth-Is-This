@@ -37,9 +37,9 @@ export const TrieProvider = ({ children }) => {
         return <div style={{ textAlign: 'center', padding: '50px', color: 'red' }}>{error}</div>;
     }
 
-    // מספק את אובייקט ה-Trie לילדים שלו
+    // מספק את אובייקט ה-Trie ואת נתוני היישובים לילדים שלו
     return (
-        <TrieContext.Provider value={trie}>
+        <TrieContext.Provider value={{ trie, settlements: allSettlementsData }}>
             {children}
         </TrieContext.Provider>
     );
